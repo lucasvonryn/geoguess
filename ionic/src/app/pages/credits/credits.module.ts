@@ -15,6 +15,5 @@ import { CreditsPage } from './credits.page';
     IonicModule,
     CreditsPageRoutingModule
   ],
-  declarations: [CreditsPage]
 })
 export class CreditsPageModule {}

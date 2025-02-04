@@ -15,6 +15,5 @@ import { GamePage } from './game.page';
     IonicModule,
     GamePageRoutingModule
   ],
-  declarations: [GamePage]
 })
 export class GamePageModule {}
