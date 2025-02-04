@@ -15,6 +15,5 @@ import { AboutPage } from './about.page';
     IonicModule,
     AboutPageRoutingModule
   ],
-  declarations: [AboutPage]
 })
 export class AboutPageModule {}
