@@ -4,8 +4,6 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { AboutPageRoutingModule } from './about-routing.module';
-
 import { AboutPage } from './about.page';
 
 @NgModule({
@@ -13,7 +11,7 @@ import { AboutPage } from './about.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    AboutPageRoutingModule
+    AboutPage,
   ],
 })
 export class AboutPageModule {}
