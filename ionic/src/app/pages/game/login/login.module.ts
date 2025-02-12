@@ -6,10 +6,13 @@ import { IonicModule } from '@ionic/angular';
 
 import { LoginPageRoutingModule } from './login-routing.module';
 
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { LoginPage } from './login.page';
 
 @NgModule({
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   imports: [
+
     CommonModule,
     FormsModule,
     IonicModule,

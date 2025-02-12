@@ -6,9 +6,11 @@ import { IonicModule } from '@ionic/angular';
 
 import { LevelTwoPageRoutingModule } from './level-two-routing.module';
 
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { LevelTwoPage } from './level-two.page';
 
 @NgModule({
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   imports: [
     CommonModule,
     FormsModule,
