@@ -24,14 +24,15 @@ const routes: Routes = [
     loadChildren: () => import('./pages/credits/credits.module').then( m => m.CreditsPageModule)
   },
   {
-    path: 'login',
+    path: 'report-login',
     loadChildren: () => import('./pages/report/login/login.module').then( m => m.LoginPageModule)
   },
   {
     path: 'report-form',
     loadChildren: () => import('./pages/report/report-form/report-form.module').then( m => m.ReportFormPageModule)
-  },  {
-    path: 'login',
+  },
+  {
+    path: 'game-login',
     loadChildren: () => import('./pages/game/login/login.module').then( m => m.LoginPageModule)
   },
   {
@@ -50,8 +51,6 @@ const routes: Routes = [
     path: 'final',
     loadChildren: () => import('./pages/game/final/final.module').then( m => m.FinalPageModule)
   },
-
-
 ];
 
 @NgModule({
