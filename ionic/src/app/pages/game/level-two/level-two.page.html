@@ -1,13 +1,35 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>level-two</ion-title>
+    <ion-title>Jogo Cultural</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">level-two</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content class="ion-padding">
+
+  <ion-button (click)="goHome()" class="btn-voltar">
+    <ion-icon name="home"></ion-icon>
+  </ion-button>
+
+  <div class="game-container" *ngIf="currentQuestion">
+    <div class="image-container">
+      <img [src]="currentQuestion.image" alt="Característica Cultural" class="cultural-image">
+    </div>
+
+    <div class="options-container">
+      <ion-button 
+        *ngFor="let option of currentQuestion.options; let i = index" 
+        expand="block" 
+        [color]="getButtonColor(i)" 
+        [disabled]="isButtonDisabled(i)"
+        (click)="selectOption(i)"
+      >
+        {{ option }}
+      </ion-button>
+    </div>
+  </div>
+
+  <div *ngIf="!currentQuestion" class="completion-message">
+    <h2>Parabéns! Você completou o jogo.</h2>
+    <ion-button (click)="restartGame()">Jogar Novamente</ion-button>
+  </div>
 </ion-content>

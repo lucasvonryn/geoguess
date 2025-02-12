@@ -14,15 +14,15 @@ export class HomePage {
   constructor(private router: Router) {}
 
   startGame() {
-    this.router.navigate(['/game-login']);
+    this.router.navigate(['game-login']);
   }
   
   showCredits() {
-    this.router.navigate(['/credits'])
+    this.router.navigate(['credits'])
   }
 
   showAbout() {
-    this.router.navigate(['/about']);
+    this.router.navigate(['about']);
   }
 
   resetProgress() {
@@ -30,7 +30,12 @@ export class HomePage {
     alert('Progresso reiniciado!');
   }
 
-  generateReport() {
-    this.router.navigate(['/report-login']);
+  showReport() {
+    this.router.navigate(['report-login']);
   }
+
+  showLevelTwo() {
+    this.router.navigate(['level-two']);
+  }
+  
 }
