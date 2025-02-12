@@ -14,7 +14,7 @@
 }
 
 .title {
-    font-size: 48px;
+    font-size: 10rem;
     font-weight: bold;
     color: #ffffff;
     text-shadow: 3px 3px 5px #000;
@@ -24,7 +24,8 @@
     display: flex;
     align-items: center;
     gap: 10px;
-    font-size: 24px;
+    margin: 50px;
+    font-size: 6rem;
     font-weight: bold;
     color: #ff0;
     background: transparent;
@@ -34,7 +35,7 @@
 }
 
 .play-button ion-icon {
-    font-size: 32px;
+    font-size: 6rem;
     color: #ff0;
 }
 
@@ -44,7 +45,8 @@
 }
 
 .menu li {
-    font-size: 20px;
+    margin: 20px;
+    font-size: 3rem;
     color: #fff;
     text-shadow: 2px 2px 4px #000;
     cursor: pointer;

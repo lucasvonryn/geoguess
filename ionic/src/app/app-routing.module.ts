@@ -17,7 +17,7 @@ const routes: Routes = [
   },
   {
     path: 'report',
-    loadChildren: () => import('./pages/report/report.module').then( m => m.ReportPageModule)
+    loadChildren: () => import('./pages/report/index/report.module').then( m => m.ReportPageModule)
   },
   {
     path: 'about',
