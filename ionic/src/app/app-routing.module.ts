@@ -24,17 +24,33 @@ const routes: Routes = [
     loadChildren: () => import('./pages/credits/credits.module').then( m => m.CreditsPageModule)
   },
   {
-    path: 'game',
-    loadChildren: () => import('./pages/game/game.module').then( m => m.GamePageModule)
-  },
-  {
     path: 'login',
     loadChildren: () => import('./pages/report/login/login.module').then( m => m.LoginPageModule)
   },
   {
     path: 'report-form',
     loadChildren: () => import('./pages/report/report-form/report-form.module').then( m => m.ReportFormPageModule)
+  },  {
+    path: 'login',
+    loadChildren: () => import('./pages/game/login/login.module').then( m => m.LoginPageModule)
   },
+  {
+    path: 'video',
+    loadChildren: () => import('./pages/game/video/video.module').then( m => m.VideoPageModule)
+  },
+  {
+    path: 'level-one',
+    loadChildren: () => import('./pages/game/level-one/level-one.module').then( m => m.LevelOnePageModule)
+  },
+  {
+    path: 'level-two',
+    loadChildren: () => import('./pages/game/level-two/level-two.module').then( m => m.LevelTwoPageModule)
+  },
+  {
+    path: 'final',
+    loadChildren: () => import('./pages/game/final/final.module').then( m => m.FinalPageModule)
+  },
+
 
 ];
 
