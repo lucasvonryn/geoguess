@@ -16,10 +16,6 @@ const routes: Routes = [
     loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule)
   },
   {
-    path: 'report',
-    loadChildren: () => import('./pages/report/index/report.module').then( m => m.ReportPageModule)
-  },
-  {
     path: 'about',
     loadChildren: () => import('./pages/about/about.module').then( m => m.AboutPageModule)
   },
@@ -31,6 +27,15 @@ const routes: Routes = [
     path: 'game',
     loadChildren: () => import('./pages/game/game.module').then( m => m.GamePageModule)
   },
+  {
+    path: 'login',
+    loadChildren: () => import('./pages/report/login/login.module').then( m => m.LoginPageModule)
+  },
+  {
+    path: 'report-form',
+    loadChildren: () => import('./pages/report/report-form/report-form.module').then( m => m.ReportFormPageModule)
+  },
+
 ];
 
 @NgModule({
