@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { IonicModule } from '@ionic/angular';
+import { IonicModule, NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-level-one',
@@ -9,11 +9,33 @@ import { IonicModule } from '@ionic/angular';
   standalone: true,
   imports: [CommonModule, IonicModule]
 })
-export class LevelOnePage implements OnInit {
+export class LevelOnePage {
+  pergunta = "{Região Sul}\nQual dessas opções mostra uma comida típica da região Sul do Brasil?";
+  opcoes = [
+    { letra: 'A', texto: 'Feijoada' },
+    { letra: 'B', texto: 'Chimarrão' },
+    { letra: 'C', texto: 'Tapioca' },
+    { letra: 'D', texto: 'Cuscuz' }
+  ];
+  estrelas = 3; // Defina quantas estrelas já foram ganhas.
 
-  constructor() { }
+  constructor(private navCtrl: NavController) {}
 
-  ngOnInit() {
+  goHome() {
+    this.navCtrl.navigateBack('/home');
   }
 
+  goBack() {
+    this.navCtrl.navigateBack('/previous');
+  }
+
+  playAudio() {
+    // Aqui você pode tocar um áudio explicando a pergunta
+    let audio = new Audio('assets/audio/pergunta.mp3');
+    audio.play();
+  }
+
+  showHint() {
+    alert('Dica: Essa bebida é muito consumida no Sul!');
+  }
 }
