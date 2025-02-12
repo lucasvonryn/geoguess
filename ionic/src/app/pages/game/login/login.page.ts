@@ -23,7 +23,7 @@ export class LoginPage implements OnInit {
     }
   }
 
-  backToHome() {
+  goHome() {
     this.navCtrl.navigateBack('/home');
   }
 }

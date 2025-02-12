@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { IonicModule } from '@ionic/angular';
+import { IonicModule} from '@ionic/angular';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-video',
@@ -10,10 +11,25 @@ import { IonicModule } from '@ionic/angular';
   imports: [CommonModule, IonicModule]
 })
 export class VideoPage implements OnInit {
+  
+  constructor(private router: Router) {}
 
-  constructor() { }
+  ngOnInit() {}
 
-  ngOnInit() {
+  goHome() {
+    this.router.navigate(['/home']);
   }
 
+  goBack() {
+    this.router.navigate(['/game-login']);
+  }
+
+  goLevelOne() {
+    this.router.navigate(['/level-one']);
+  }
+
+  reloadVideo(videoElement: HTMLVideoElement) {
+    videoElement.load();
+    videoElement.play();
+  }
 }
