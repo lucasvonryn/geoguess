@@ -27,6 +27,6 @@ export class HomePage {
   }
 
   showCredits() {
-    alert('Créditos do jogo');
+    this.router.navigate(['/credits'])
   }
 }

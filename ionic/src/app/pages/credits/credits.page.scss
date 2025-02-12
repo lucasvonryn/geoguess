@@ -1,0 +1,53 @@
+.credits{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.credits-content {
+    height: 100%;
+    position: relative;
+}
+
+.content-wrapper {
+    height: 100%;
+    align-items: center;
+}
+
+.title {
+    font-size: 10rem;
+    font-weight: bold;
+    color: #ffffff;
+    text-shadow: 3px 3px 5px #000;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.credits-list {
+    padding: 0;
+    margin: 0;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+}
+
+.credits-list li {
+    list-style-type: none;
+}
+
+.credits-item {
+    h2, p {
+        margin: 10px 0;
+        text-align: center;
+    }
+}
+
+.previous-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    cursor: pointer;
+    background: none;
+    z-index: 1000;
+}

@@ -1,13 +1,23 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>credits</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content class="credits">
+  
+  <div class = "credits-content">
+    <button class="previous-button" (click)="goToHome()">
+      <ion-icon name="arrow-back-outline" size = "large"></ion-icon>
+    </button>
+  
+    <ion-title class="title">CRÉDITOS</ion-title>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">credits</ion-title>
-    </ion-toolbar>
-  </ion-header>
+    <div class="ion-align-items-center" style="height: 70vh;">
+      <ul class="credits-list">
+        <li class="credits-item">
+          <h2>DESENVOLVIDO POR:</h2>
+          <p>André Luiz Milek Magnani</p>
+          <p>Lucas Gabriel Von Ryn</p>
+          <p>Murilo Vozniak Correia</p>
+          <p>Nathan de Paula</p>
+          <p>Vagner Guimarães</p>
+        </li>
+      </ul>
+    </div>
+  </div>
 </ion-content>

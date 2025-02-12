@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { IonicModule } from '@ionic/angular';
+import { Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-credits',
@@ -9,10 +10,15 @@ import { IonicModule } from '@ionic/angular';
   styleUrls: ['./credits.page.scss'],
 })
 export class CreditsPage implements OnInit {
+  
 
-  constructor() { }
+  constructor(private router: Router) {}
 
   ngOnInit() {
+  }
+
+  goToHome(){
+    this.router.navigate(['home']);
   }
 
 }
