@@ -62,4 +62,20 @@
 	--ion-color-dark-shade: #292929;
 	--ion-color-dark-tint: #444444;
 
+	--ion-color-orange-strava: #FC5200;
+	--ion-color-orange-strava-rgb: 252,82,0;
+	--ion-color-orange-strava-contrast: #000000;
+	--ion-color-orange-strava-contrast-rgb: 0,0,0;
+	--ion-color-orange-strava-shade: #de4800;
+	--ion-color-orange-strava-tint: #fc631a;
+
+}
+
+.ion-color-orange-strava {
+    --ion-color-base: var(--ion-color-orange-strava);
+    --ion-color-base-rgb: var(--ion-color-orange-strava-rgb);
+    --ion-color-contrast: var(--ion-color-orange-strava-contrast);
+    --ion-color-contrast-rgb: var(--ion-color-orange-strava-contrast-rgb);
+    --ion-color-shade: var(--ion-color-orange-strava-shade);
+    --ion-color-tint: var(--ion-color-orange-strava-tint);
 }
