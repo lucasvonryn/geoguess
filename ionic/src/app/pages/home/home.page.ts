@@ -14,7 +14,7 @@ export class HomePage {
   constructor(private router: Router) {}
 
   startGame() {
-    this.router.navigate(['/game']);
+    this.router.navigate(['/game-login']);
   }
 
   resetProgress() {

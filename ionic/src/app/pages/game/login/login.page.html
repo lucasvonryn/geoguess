@@ -1,13 +1,22 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>login</ion-title>
+    <ion-title>Identificação</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">login</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content class="ion-padding identificacao-container">
+  <div class="content">
+    <ion-button fill="clear" (click)="goHome()" class="btn-voltar">
+      <ion-icon name="arrow-back-outline"></ion-icon>
+    </ion-button>
+
+    <h2>QUAL O SEU NOME?</h2>
+    <ion-item>
+      <ion-input [(ngModel)]="name" placeholder="Nome"></ion-input>
+    </ion-item>
+
+    <ion-button expand="full" class="btn-iniciar" (click)="showVideo()" [disabled]="!name">
+      INICIAR JOGO
+    </ion-button>
+  </div>
 </ion-content>

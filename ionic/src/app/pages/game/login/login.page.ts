@@ -1,19 +1,29 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { IonicModule } from '@ionic/angular';
+import { IonicModule, NavController } from '@ionic/angular';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss'],
   standalone: true,
-  imports: [CommonModule, IonicModule]
+  imports: [CommonModule, IonicModule, FormsModule]
 })
 export class LoginPage implements OnInit {
+  name: string = '';
 
-  constructor() { }
+  constructor(private navCtrl: NavController) {}
 
-  ngOnInit() {
+  ngOnInit() {}
+
+  showVideo() {
+    if (this.name.trim()) {
+      this.navCtrl.navigateForward('/video');
+    }
   }
 
+  goHome() {
+    this.navCtrl.navigateBack('/home');
+  }
 }
