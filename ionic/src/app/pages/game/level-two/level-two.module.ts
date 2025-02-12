@@ -16,7 +16,6 @@ import { LevelTwoPage } from './level-two.page';
     FormsModule,
     IonicModule,
     LevelTwoPageRoutingModule
-  ],
-  declarations: [LevelTwoPage]
+  ]
 })
 export class LevelTwoPageModule {}

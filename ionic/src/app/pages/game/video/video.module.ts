@@ -14,7 +14,6 @@ import { VideoPage } from './video.page';
     FormsModule,
     IonicModule,
     VideoPageRoutingModule
-  ],
-  declarations: [VideoPage]
+  ]
 })
 export class VideoPageModule {}

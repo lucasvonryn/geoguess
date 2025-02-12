@@ -16,7 +16,6 @@ import { LevelOnePage } from './level-one.page';
     FormsModule,
     IonicModule,
     LevelOnePageRoutingModule
-  ],
-  declarations: [LevelOnePage]
+  ]
 })
 export class LevelOnePageModule {}

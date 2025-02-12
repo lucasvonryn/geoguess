@@ -16,7 +16,6 @@ import { FinalPage } from './final.page';
     FormsModule,
     IonicModule,
     FinalPageRoutingModule
-  ],
-  declarations: [FinalPage]
+  ]
 })
 export class FinalPageModule {}

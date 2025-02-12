@@ -6,7 +6,7 @@ import { IonicModule } from '@ionic/angular';
   selector: 'app-report-form',
   templateUrl: './report-form.page.html',
   styleUrls: ['./report-form.page.scss'],
-  standalone: true, // Isso indica que o componente é standalone
+  standalone: true,
   imports: [CommonModule, IonicModule]
 })
 export class ReportFormPage implements OnInit {

@@ -16,7 +16,6 @@ import { ReportFormPage } from './report-form.page';
     FormsModule,
     IonicModule,
     ReportFormPageRoutingModule
-  ],
-  declarations: [ReportFormPage] // Adicione o componente aqui
+  ] // Adicione o componente aqui
 })
 export class ReportFormPageModule {}
