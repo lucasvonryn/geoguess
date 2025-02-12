@@ -10,14 +10,13 @@ import { IonicModule, NavController } from '@ionic/angular';
   imports: [CommonModule, IonicModule]
 })
 export class LevelOnePage {
-  pergunta = "{Região Sul}\nQual dessas opções mostra uma comida típica da região Sul do Brasil?";
-  opcoes = [
+  question = "Qual dessas opções mostra uma comida típica da região Sul do Brasil?";
+  options = [
     { letra: 'A', texto: 'Feijoada' },
     { letra: 'B', texto: 'Chimarrão' },
     { letra: 'C', texto: 'Tapioca' },
     { letra: 'D', texto: 'Cuscuz' }
   ];
-  estrelas = 3; // Defina quantas estrelas já foram ganhas.
 
   constructor(private navCtrl: NavController) {}
 
@@ -26,7 +25,7 @@ export class LevelOnePage {
   }
 
   goBack() {
-    this.navCtrl.navigateBack('/previous');
+    this.navCtrl.navigateBack('/video');
   }
 
   playAudio() {
