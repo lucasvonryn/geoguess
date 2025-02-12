@@ -23,7 +23,7 @@ export class HomePage {
   }
 
   generateReport() {
-    alert('Relatório gerado!');
+    this.router.navigate(['/report-login']);
   }
 
   showCredits() {

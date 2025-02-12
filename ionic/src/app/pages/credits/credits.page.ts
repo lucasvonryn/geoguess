@@ -7,6 +7,7 @@ import { Router, RouterModule } from '@angular/router';
   selector: 'app-credits',
   templateUrl: './credits.page.html',
   imports: [IonicModule, CommonModule],
+  standalone: true,
   styleUrls: ['./credits.page.scss'],
 })
 export class CreditsPage implements OnInit {
