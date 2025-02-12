@@ -1,13 +1,628 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>report-form</ion-title>
+    <ion-title>Relatório</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">report-form</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content class="ion-padding">
+  <ion-button (click)="goBack()" class="btn-voltar">
+    <ion-icon name="arrow-back-outline"></ion-icon>
+  </ion-button>
+
+  <ion-button (click)="goHome()" class="btn-voltar">
+    <ion-icon name="home"></ion-icon>
+  </ion-button>
+  <ion-card>
+
+
+
+    <ion-card-content>
+
+      <!-- Grupo: Individual -->
+      <ion-label class="group-title">Individual</ion-label>
+
+      <div class="group-card">
+        <ion-card-header>
+          <ion-label>Jogador: Tananan</ion-label>
+        </ion-card-header>
+
+        <!-- Subgrupo: Fase 1 -->
+        <ion-card class="subgroup-card">
+          <ion-card-header>
+            <ion-label class="subgroup-title">Fase 1</ion-label>
+          </ion-card-header>
+          <div class="result-grid">
+
+            <ion-card class="result-item">
+              <ion-grid>
+                <ion-row>
+                  <ion-card-header class="result-item-header">
+                    <ion-col>
+                      <ion-icon name="checkmark-circle-outline"></ion-icon>
+                    </ion-col>
+                    <ion-col>
+                      <ion-card-title>Respostas corretas</ion-card-title>
+                    </ion-col>
+                  </ion-card-header>
+                </ion-row>
+                <ion-row>
+                  <ion-col>
+                    <ion-card-content>
+                      <h1>4 / 5</h1>
+                    </ion-card-content>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </ion-card>
+
+            <ion-card class="result-item">
+              <ion-grid>
+                <ion-row>
+                  <ion-card-header class="result-item-header">
+                    <ion-col>
+                      <ion-icon name="close-circle-outline"></ion-icon>
+                    </ion-col>
+                    <ion-col>
+                      <ion-card-title>Respostas incorretas</ion-card-title>
+                    </ion-col>
+                  </ion-card-header>
+                </ion-row>
+                <ion-row>
+                  <ion-col>
+                    <ion-card-content>
+                      <h1>4 / 5</h1>
+                    </ion-card-content>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </ion-card>
+
+            <ion-card class="result-item">
+              <ion-grid>
+                <ion-row>
+                  <ion-card-header class="result-item-header">
+                    <ion-col>
+                      <ion-icon name="hourglass-outline"></ion-icon>
+                    </ion-col>
+                    <ion-col>
+                      <ion-card-title>Tempo médio gasto</ion-card-title>
+                    </ion-col>
+                  </ion-card-header>
+                </ion-row>
+                <ion-row>
+                  <ion-col>
+                    <ion-card-content>
+                      <h1>20 segundos</h1>
+                    </ion-card-content>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </ion-card>
+
+            <ion-card class="result-item">
+              <ion-grid>
+                <ion-row>
+                  <ion-card-header class="result-item-header">
+                    <ion-col>
+                      <ion-icon name="pulse-outline"></ion-icon>
+                    </ion-col>
+                    <ion-col>
+                      <ion-card-title>Uso do sistema de dicas</ion-card-title>
+                    </ion-col>
+                  </ion-card-header>
+                </ion-row>
+                <ion-row>
+                  <ion-col>
+                    <ion-card-content>
+                      <h1>30%</h1>
+                    </ion-card-content>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </ion-card>
+
+          </div>
+        </ion-card>
+
+        <ion-card class="subgroup-card">
+          <ion-card-header>
+            <ion-label class="subgroup-title">Fase 2</ion-label>
+          </ion-card-header>
+          <div class="result-grid">
+
+            <ion-card class="result-item">
+              <ion-grid>
+                <ion-row>
+                  <ion-card-header class="result-item-header">
+                    <ion-col>
+                      <ion-icon name="checkmark-circle-outline"></ion-icon>
+                    </ion-col>
+                    <ion-col>
+                      <ion-card-title>Respostas corretas</ion-card-title>
+                    </ion-col>
+                  </ion-card-header>
+                </ion-row>
+                <ion-row>
+                  <ion-col>
+                    <ion-card-content>
+                      <h1>4 / 5</h1>
+                    </ion-card-content>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </ion-card>
+
+            <ion-card class="result-item">
+              <ion-grid>
+                <ion-row>
+                  <ion-card-header class="result-item-header">
+                    <ion-col>
+                      <ion-icon name="close-circle-outline"></ion-icon>
+                    </ion-col>
+                    <ion-col>
+                      <ion-card-title>Respostas incorretas</ion-card-title>
+                    </ion-col>
+                  </ion-card-header>
+                </ion-row>
+                <ion-row>
+                  <ion-col>
+                    <ion-card-content>
+                      <h1>4 / 5</h1>
+                    </ion-card-content>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </ion-card>
+
+            <ion-card class="result-item">
+              <ion-grid>
+                <ion-row>
+                  <ion-card-header class="result-item-header">
+                    <ion-col>
+                      <ion-icon name="hourglass-outline"></ion-icon>
+                    </ion-col>
+                    <ion-col>
+                      <ion-card-title>Tempo médio gasto</ion-card-title>
+                    </ion-col>
+                  </ion-card-header>
+                </ion-row>
+                <ion-row>
+                  <ion-col>
+                    <ion-card-content>
+                      <h1>20 segundos</h1>
+                    </ion-card-content>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </ion-card>
+
+            <ion-card class="result-item">
+              <ion-grid>
+                <ion-row>
+                  <ion-card-header class="result-item-header">
+                    <ion-col>
+                      <ion-icon name="pulse-outline"></ion-icon>
+                    </ion-col>
+                    <ion-col>
+                      <ion-card-title>Uso do sistema de dicas</ion-card-title>
+                    </ion-col>
+                  </ion-card-header>
+                </ion-row>
+                <ion-row>
+                  <ion-col>
+                    <ion-card-content>
+                      <h1>30%</h1>
+                    </ion-card-content>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </ion-card>
+
+          </div>
+        </ion-card>
+
+        <ion-card class="subgroup-card">
+          <ion-card-header>
+            <ion-label class="subgroup-title">Geral</ion-label>
+          </ion-card-header>
+          <div class="result-grid">
+
+            <ion-card class="result-item">
+              <ion-grid>
+                <ion-row>
+                  <ion-card-header class="result-item-header">
+                    <ion-col>
+                      <ion-icon name="checkmark-circle-outline"></ion-icon>
+                    </ion-col>
+                    <ion-col>
+                      <ion-card-title>Respostas corretas</ion-card-title>
+                    </ion-col>
+                  </ion-card-header>
+                </ion-row>
+                <ion-row>
+                  <ion-col>
+                    <ion-card-content>
+                      <h1>4 / 5</h1>
+                    </ion-card-content>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </ion-card>
+
+            <ion-card class="result-item">
+              <ion-grid>
+                <ion-row>
+                  <ion-card-header class="result-item-header">
+                    <ion-col>
+                      <ion-icon name="close-circle-outline"></ion-icon>
+                    </ion-col>
+                    <ion-col>
+                      <ion-card-title>Respostas incorretas</ion-card-title>
+                    </ion-col>
+                  </ion-card-header>
+                </ion-row>
+                <ion-row>
+                  <ion-col>
+                    <ion-card-content>
+                      <h1>4 / 5</h1>
+                    </ion-card-content>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </ion-card>
+
+            <ion-card class="result-item">
+              <ion-grid>
+                <ion-row>
+                  <ion-card-header class="result-item-header">
+                    <ion-col>
+                      <ion-icon name="hourglass-outline"></ion-icon>
+                    </ion-col>
+                    <ion-col>
+                      <ion-card-title>Tempo médio gasto</ion-card-title>
+                    </ion-col>
+                  </ion-card-header>
+                </ion-row>
+                <ion-row>
+                  <ion-col>
+                    <ion-card-content>
+                      <h1>20 segundos</h1>
+                    </ion-card-content>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </ion-card>
+
+            <ion-card class="result-item">
+              <ion-grid>
+                <ion-row>
+                  <ion-card-header class="result-item-header">
+                    <ion-col>
+                      <ion-icon name="pulse-outline"></ion-icon>
+                    </ion-col>
+                    <ion-col>
+                      <ion-card-title>Uso do sistema de dicas</ion-card-title>
+                    </ion-col>
+                  </ion-card-header>
+                </ion-row>
+                <ion-row>
+                  <ion-col>
+                    <ion-card-content>
+                      <h1>30%</h1>
+                    </ion-card-content>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </ion-card>
+
+          </div>
+        </ion-card>
+      </div>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-content>
+      <ion-label class="group-title">Turma</ion-label>
+      <!-- Grupo: Turma -->
+      <div class="group-card">
+        <ion-card-header>
+          <ion-label>Turma 1</ion-label>
+        </ion-card-header>
+
+        <!-- Subgrupo: Fase 1 -->
+        <ion-card class="subgroup-card">
+          <ion-card-header>
+            <ion-label class="subgroup-title">Fase 1</ion-label>
+          </ion-card-header>
+          <div class="result-grid">
+
+            <ion-card class="result-item">
+              <ion-grid>
+                <ion-row>
+                  <ion-card-header class="result-item-header">
+                    <ion-col>
+                      <ion-icon name="location-outline"></ion-icon>
+                    </ion-col>
+                    <ion-col>
+                      <ion-card-title>Taxa erros questão 1</ion-card-title>
+                    </ion-col>
+                  </ion-card-header>
+                </ion-row>
+                <ion-row>
+                  <ion-col>
+                    <ion-card-content>
+                      <h1>56%</h1>
+                    </ion-card-content>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </ion-card>
+
+            <ion-card class="result-item">
+              <ion-grid>
+                <ion-row>
+                  <ion-card-header class="result-item-header">
+                    <ion-col>
+                      <ion-icon name="location-outline"></ion-icon>
+                    </ion-col>
+                    <ion-col>
+                      <ion-card-title>Taxa erros questão 2</ion-card-title>
+                    </ion-col>
+                  </ion-card-header>
+                </ion-row>
+                <ion-row>
+                  <ion-col>
+                    <ion-card-content>
+                      <h1>56%</h1>
+                    </ion-card-content>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </ion-card>
+
+            <ion-card class="result-item">
+              <ion-grid>
+                <ion-row>
+                  <ion-card-header class="result-item-header">
+                    <ion-col>
+                      <ion-icon name="location-outline"></ion-icon>
+                    </ion-col>
+                    <ion-col>
+                      <ion-card-title>Taxa erros questão 3</ion-card-title>
+                    </ion-col>
+                  </ion-card-header>
+                </ion-row>
+                <ion-row>
+                  <ion-col>
+                    <ion-card-content>
+                      <h1>56%</h1>
+                    </ion-card-content>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </ion-card>
+
+            <ion-card class="result-item">
+              <ion-grid>
+                <ion-row>
+                  <ion-card-header class="result-item-header">
+                    <ion-col>
+                      <ion-icon name="location-outline"></ion-icon>
+                    </ion-col>
+                    <ion-col>
+                      <ion-card-title>Taxa erros questão 4</ion-card-title>
+                    </ion-col>
+                  </ion-card-header>
+                </ion-row>
+                <ion-row>
+                  <ion-col>
+                    <ion-card-content>
+                      <h1>56%</h1>
+                    </ion-card-content>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </ion-card>
+
+          </div>
+        </ion-card>
+
+        <ion-card class="subgroup-card">
+          <ion-card-header>
+            <ion-label class="subgroup-title">Fase 2</ion-label>
+          </ion-card-header>
+          <div class="result-grid">
+
+            <ion-card class="result-item">
+              <ion-grid>
+                <ion-row>
+                  <ion-card-header class="result-item-header">
+                    <ion-col>
+                      <ion-icon name="location-outline"></ion-icon>
+                    </ion-col>
+                    <ion-col>
+                      <ion-card-title>Taxa erros questão 1</ion-card-title>
+                    </ion-col>
+                  </ion-card-header>
+                </ion-row>
+                <ion-row>
+                  <ion-col>
+                    <ion-card-content>
+                      <h1>56%</h1>
+                    </ion-card-content>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </ion-card>
+
+            <ion-card class="result-item">
+              <ion-grid>
+                <ion-row>
+                  <ion-card-header class="result-item-header">
+                    <ion-col>
+                      <ion-icon name="location-outline"></ion-icon>
+                    </ion-col>
+                    <ion-col>
+                      <ion-card-title>Taxa erros questão 2</ion-card-title>
+                    </ion-col>
+                  </ion-card-header>
+                </ion-row>
+                <ion-row>
+                  <ion-col>
+                    <ion-card-content>
+                      <h1>56%</h1>
+                    </ion-card-content>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </ion-card>
+
+            <ion-card class="result-item">
+              <ion-grid>
+                <ion-row>
+                  <ion-card-header class="result-item-header">
+                    <ion-col>
+                      <ion-icon name="location-outline"></ion-icon>
+                    </ion-col>
+                    <ion-col>
+                      <ion-card-title>Taxa erros questão 3</ion-card-title>
+                    </ion-col>
+                  </ion-card-header>
+                </ion-row>
+                <ion-row>
+                  <ion-col>
+                    <ion-card-content>
+                      <h1>56%</h1>
+                    </ion-card-content>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </ion-card>
+
+            <ion-card class="result-item">
+              <ion-grid>
+                <ion-row>
+                  <ion-card-header class="result-item-header">
+                    <ion-col>
+                      <ion-icon name="location-outline"></ion-icon>
+                    </ion-col>
+                    <ion-col>
+                      <ion-card-title>Taxa erros questão 4</ion-card-title>
+                    </ion-col>
+                  </ion-card-header>
+                </ion-row>
+                <ion-row>
+                  <ion-col>
+                    <ion-card-content>
+                      <h1>56%</h1>
+                    </ion-card-content>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </ion-card>
+
+          </div>
+        </ion-card>
+
+        <ion-card class="subgroup-card">
+          <ion-card-header>
+            <ion-label class="subgroup-title">Geral</ion-label>
+          </ion-card-header>
+          <div class="result-grid">
+
+            <ion-card class="result-item">
+              <ion-grid>
+                <ion-row>
+                  <ion-card-header class="result-item-header">
+                    <ion-col>
+                      <ion-icon name="location-outline"></ion-icon>
+                    </ion-col>
+                    <ion-col>
+                      <ion-card-title>Taxa erros questão 1</ion-card-title>
+                    </ion-col>
+                  </ion-card-header>
+                </ion-row>
+                <ion-row>
+                  <ion-col>
+                    <ion-card-content>
+                      <h1>56%</h1>
+                    </ion-card-content>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </ion-card>
+
+            <ion-card class="result-item">
+              <ion-grid>
+                <ion-row>
+                  <ion-card-header class="result-item-header">
+                    <ion-col>
+                      <ion-icon name="location-outline"></ion-icon>
+                    </ion-col>
+                    <ion-col>
+                      <ion-card-title>Taxa erros questão 2</ion-card-title>
+                    </ion-col>
+                  </ion-card-header>
+                </ion-row>
+                <ion-row>
+                  <ion-col>
+                    <ion-card-content>
+                      <h1>56%</h1>
+                    </ion-card-content>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </ion-card>
+
+            <ion-card class="result-item">
+              <ion-grid>
+                <ion-row>
+                  <ion-card-header class="result-item-header">
+                    <ion-col>
+                      <ion-icon name="location-outline"></ion-icon>
+                    </ion-col>
+                    <ion-col>
+                      <ion-card-title>Taxa erros questão 3</ion-card-title>
+                    </ion-col>
+                  </ion-card-header>
+                </ion-row>
+                <ion-row>
+                  <ion-col>
+                    <ion-card-content>
+                      <h1>56%</h1>
+                    </ion-card-content>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </ion-card>
+
+            <ion-card class="result-item">
+              <ion-grid>
+                <ion-row>
+                  <ion-card-header class="result-item-header">
+                    <ion-col>
+                      <ion-icon name="location-outline"></ion-icon>
+                    </ion-col>
+                    <ion-col>
+                      <ion-card-title>Taxa erros questão 4</ion-card-title>
+                    </ion-col>
+                  </ion-card-header>
+                </ion-row>
+                <ion-row>
+                  <ion-col>
+                    <ion-card-content>
+                      <h1>56%</h1>
+                    </ion-card-content>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </ion-card>
+
+          </div>
+        </ion-card>
+      </div>
+
+    </ion-card-content>
+  </ion-card>
 </ion-content>

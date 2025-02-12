@@ -1,0 +1,52 @@
+.group-card {
+    margin-bottom: 15px;
+    padding: 10px;
+  }
+  
+  .group-title {
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    display: block;
+    padding: 10px 0;
+  }
+  
+  .subgroup-card {
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 10px;
+  }
+  
+  .subgroup-title {
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    display: block;
+    padding: 5px 0;
+  }
+  
+  .result-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  
+  .result-item {
+    text-align: center;
+    padding: 15px;
+    border-radius: 10px;
+    
+  }
+
+  .result-item-header{
+    display: grid;
+    grid-template-columns: [column-1] auto [column-2] 1fr;
+    grid-template-rows: [row-1] auto [row-2] 1fr;
+  }
+
+  .result-item ion-icon {
+    font-size: 24px;
+    margin-bottom: 5px;
+  }

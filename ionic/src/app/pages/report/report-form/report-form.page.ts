@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-report-form',
@@ -11,9 +12,17 @@ import { IonicModule } from '@ionic/angular';
 })
 export class ReportFormPage implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
+  }
+
+  goBack() {
+    this.router.navigate(['report-login']);
+  }
+
+  goHome() {
+    this.router.navigate(['home']);
   }
 
 }
