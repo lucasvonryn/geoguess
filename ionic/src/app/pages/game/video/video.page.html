@@ -4,32 +4,27 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="video-container">
-  <!-- Botão voltar -->
-  <ion-button class="btn-back" (click)="goBack()">
+<ion-content class="ion-padding">
+  <ion-button (click)="goBack()">
     <ion-icon name="arrow-back"></ion-icon>
   </ion-button>
 
-  <!-- Player de vídeo -->
-  <div class="video-wrapper">
+  <div>
     <video #videoPlayer controls autoplay>
       <source src="assets/videos/exemplo.mp4" type="video/mp4">
       Seu navegador não suporta vídeos.
     </video>
   </div>
 
-  <!-- Botão reload -->
-  <ion-button class="btn-reload" (click)="reloadVideo(videoPlayer)">
+  <ion-button (click)="reloadVideo(videoPlayer)">
     <ion-icon name="refresh"></ion-icon>
   </ion-button>
 
-  <!-- Botão home -->
-  <ion-button class="btn-home" (click)="goHome()">
+  <ion-button (click)="goHome()">
     <ion-icon name="home"></ion-icon>
   </ion-button>
 
-  <!-- Botão avançar -->
-  <ion-button class="btn-home" (click)="goLevelOne()">
+  <ion-button (click)="goLevelOne()">
     <ion-icon name="arrow-forward"></ion-icon>
   </ion-button>
 </ion-content>
