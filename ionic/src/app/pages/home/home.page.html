@@ -2,16 +2,16 @@
   <div class="container">
     <h1 class="title">GEOGUESS</h1>
 
-    <button class="play-button" (click)="startGame()">
+    <ion-button class="play-button" color="primary" fill="outline" (click)="startGame()">
       <ion-icon name="play-circle"></ion-icon>
       JOGAR
-    </button>
+    </ion-button>
 
     <ul class="menu">
       <li (click)="resetProgress()">REINICIAR PROGRESSO</li>
       <li (click)="generateReport()">EMITIR RELATÓRIO</li>
       <li (click)="showCredits()">CRÉDITOS</li>
-      <li (click)="showCredits()">SOBRE</li>
+      <li (click)="showAbout()">SOBRE O JOGO</li>
     </ul>
   </div>
 </ion-content>

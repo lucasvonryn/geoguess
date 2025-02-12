@@ -16,6 +16,14 @@ export class HomePage {
   startGame() {
     this.router.navigate(['/game-login']);
   }
+  
+  showCredits() {
+    this.router.navigate(['/credits'])
+  }
+
+  showAbout() {
+    this.router.navigate(['/about']);
+  }
 
   resetProgress() {
     localStorage.clear();
@@ -24,9 +32,5 @@ export class HomePage {
 
   generateReport() {
     this.router.navigate(['/report-login']);
-  }
-
-  showCredits() {
-    this.router.navigate(['/credits'])
   }
 }
