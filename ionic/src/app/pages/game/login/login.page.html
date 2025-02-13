@@ -8,7 +8,7 @@
   <ion-row class="ion-justify-content-center ion-align-items-center full-height">
     
     <ion-col size="3" class="align-center">
-      <ion-button (click)="goHome()" size="large">
+      <ion-button (click)="goHome()">
         <ion-icon name="arrow-back-outline"></ion-icon>
       </ion-button>
     </ion-col>
@@ -25,7 +25,7 @@
     </ion-col>
 
     <ion-col size="3" class="align-center">
-      <ion-button (click)="showVideo()" [disabled]="!name" size="large">
+      <ion-button (click)="showVideo()" [disabled]="!name">
         <ion-icon name="play"></ion-icon>
         INICIAR JOGO
       </ion-button>
