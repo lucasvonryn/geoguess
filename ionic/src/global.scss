@@ -56,3 +56,10 @@
     width: 100%;
     max-width: 300px; /* Ajuste conforme necessário */
 }
+
+.home-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 10;
+}

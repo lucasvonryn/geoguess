@@ -1,38 +1,50 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Fase 1</ion-title>
+    <ion-title class="text-center">Fase 1</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content class="ion-padding">
-  <ion-row>
-    <ion-col size="1">
-      <ion-button class="btn-play" (click)="playAudio()">
-        <ion-icon name="play"></ion-icon>
-      </ion-button>
-      <ion-button class="btn-back" (click)="goBack()">
+
+  <!-- Botão Home no canto superior direito -->
+  <div class="home-button">
+    <ion-button (click)="goHome()">
+      <ion-icon name="home"></ion-icon>
+    </ion-button>
+  </div>
+
+  <ion-row class="ion-justify-content-center ion-align-items-center full-height">
+    
+    <!-- Botão de Voltar e de Play (lado esquerdo) -->
+    <ion-col size="3" class="align-center">
+      <ion-button (click)="goBack()">
         <ion-icon name="arrow-back"></ion-icon>
+      </ion-button>
+      
+      <ion-button (click)="playAudio()">
+        <ion-icon name="play"></ion-icon>
       </ion-button>
     </ion-col>
 
-    <ion-col size="10">
-      <div>
-        {{ question }}
-      </div>
-    
-      <div class="opcoes">
-        <ion-button *ngFor="let option of options" class="opcao">
-          {{ option.letra }} - {{ option.texto }}
-        </ion-button>
-      </div>
+    <!-- Pergunta e Opções (centralizado) -->
+    <ion-col size="6" class="ion-text-center">
+      <ion-row class="ion-justify-content-center">
+        <h2>{{ question }}</h2>
+      </ion-row>
+
+      <ion-row class="ion-justify-content-center">
+        <div class="options">
+          <ion-button *ngFor="let option of options" class="option">
+            {{ option.letra }} - {{ option.texto }}
+          </ion-button>
+        </div>
+      </ion-row>
     </ion-col>
-    
-    <ion-col size="1">
-      
-      <ion-button class="btn-home" (click)="goHome()">
-        <ion-icon name="home"></ion-icon>
-      </ion-button>
-      <ion-button class="btn-dica" (click)="showHint()">Dica!</ion-button>
+
+    <!-- Botão de Dica (lado direito) -->
+    <ion-col size="3" class="align-center">
+      <ion-button (click)="showHint()">Dica!</ion-button>
     </ion-col>
+
   </ion-row>
 </ion-content>
