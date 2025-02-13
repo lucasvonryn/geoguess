@@ -1,0 +1,16 @@
+ion-item {
+    --background: transparent;
+    --color: white;
+    --placeholder-color: white;
+}
+
+.full-height {
+    height: 80vh; /* Garante que ocupe toda a tela */
+}
+
+.center-input {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: 300px; /* Ajuste conforme necessário */
+}
