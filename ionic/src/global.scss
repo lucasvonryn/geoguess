@@ -148,11 +148,13 @@ ion-toolbar {
   text-shadow: 2px 2px 0px #000;
   border-radius: 15px;
   margin: 10px;
+  transition: all 0.3s ease-in-out;
 }
 
 .back-button:hover,
 .start-button:hover {
-  background-color: #005599;
+  background-color: #004488;
+  transform: scale(1.1);
 }
 
 .option-container {

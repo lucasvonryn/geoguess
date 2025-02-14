@@ -1,12 +1,12 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Jogo Cultural</ion-title>
+    <ion-title class="identification-title text-center">JOGO DAS IMAGENS</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="ion-padding">
+<ion-content class="background identification-container ion-padding">
 
-  <ion-button (click)="goHome()" class="btn-voltar">
+  <ion-button (click)="goHome()" class="back-button" fill="clear">
     <ion-icon name="home"></ion-icon>
   </ion-button>
 
@@ -22,6 +22,8 @@
         [color]="getButtonColor(i)" 
         [disabled]="isButtonDisabled(i)"
         (click)="selectOption(i)"
+        fill="clear"
+        class="option-button"
       >
         {{ option }}
       </ion-button>
@@ -29,7 +31,7 @@
   </div>
 
   <div *ngIf="!currentQuestion" class="completion-message">
-    <h2>Parabéns! Você completou o jogo.</h2>
-    <ion-button (click)="restartGame()">Jogar Novamente</ion-button>
+    <h2 class="identification-title">Parabéns! Você completou o jogo.</h2>
+    <ion-button (click)="restartGame()" fill="clear" class="back-button">Jogar Novamente</ion-button>
   </div>
 </ion-content>
