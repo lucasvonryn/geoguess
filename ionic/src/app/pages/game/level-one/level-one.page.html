@@ -5,18 +5,17 @@
 </ion-header>
 
 <ion-content class="background identification-container ion-padding">
-
-  <ion-button (click)="playAudio()" class="back-button" fill="clear">
-    <ion-icon name="play"></ion-icon>
-  </ion-button>
-
-  <ion-button (click)="goHome()" class="back-button" fill="clear">
-    <ion-icon name="home"></ion-icon>
-  </ion-button>
-
   <div class="game-container">
     <ion-row class="ion-justify-content-center ion-align-items-center full-height">
       <ion-col size="3" class="align-center">
+        <ion-button (click)="playAudio()" class="back-button" fill="clear">
+          <ion-icon name="play"></ion-icon>
+        </ion-button>
+      
+        <ion-button (click)="goHome()" class="back-button" fill="clear">
+          <ion-icon name="home"></ion-icon>
+        </ion-button>
+      
         <ion-button (click)="goBack()" class="back-button" fill="clear">
           <ion-icon name="arrow-back"></ion-icon>
         </ion-button>
