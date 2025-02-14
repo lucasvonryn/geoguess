@@ -6,8 +6,15 @@
   gap: 10px; /* Espaço entre os botões */
 }
 
-.opcao {
+.option {
   width: 80%; /* Define a largura em 80% da tela */
   max-width: 500px; /* Define um limite máximo */
   text-align: center;
+}
+
+.video-button {
+  position: absolute;
+  top: 10px;
+  left: 10px; /* Ajuste para evitar sobreposição com o botão Home */
+  z-index: 10;
 }

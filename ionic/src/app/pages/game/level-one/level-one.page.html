@@ -6,7 +6,12 @@
 
 <ion-content class="ion-padding">
 
-  <!-- Botão Home no canto superior direito -->
+  <div class="video-button">
+    <ion-button (click)="playAudio()">
+      <ion-icon name="play"></ion-icon>
+    </ion-button>
+  </div>
+
   <div class="home-button">
     <ion-button (click)="goHome()">
       <ion-icon name="home"></ion-icon>
@@ -15,33 +20,30 @@
 
   <ion-row class="ion-justify-content-center ion-align-items-center full-height">
     
-    <!-- Botão de Voltar e de Play (lado esquerdo) -->
     <ion-col size="3" class="align-center">
       <ion-button (click)="goBack()">
         <ion-icon name="arrow-back"></ion-icon>
       </ion-button>
-      
-      <ion-button (click)="playAudio()">
-        <ion-icon name="play"></ion-icon>
-      </ion-button>
     </ion-col>
 
-    <!-- Pergunta e Opções (centralizado) -->
     <ion-col size="6" class="ion-text-center">
       <ion-row class="ion-justify-content-center">
-        <h2>{{ question }}</h2>
+        <h2>{{ questions[currentQuestion].question }}</h2>
       </ion-row>
 
       <ion-row class="ion-justify-content-center">
         <div class="options">
-          <ion-button *ngFor="let option of options" class="option">
-            {{ option.letra }} - {{ option.texto }}
+          <ion-button *ngFor="let option of questions[currentQuestion].options" 
+                      class="option"
+                      [ngClass]="getOptionClass(option)"
+                      (click)="answer(option)"
+                      [disabled]="questions[currentQuestion].answered">
+            {{ option.letter }} - {{ option.text }}
           </ion-button>
         </div>
       </ion-row>
     </ion-col>
 
-    <!-- Botão de Dica (lado direito) -->
     <ion-col size="3" class="align-center">
       <ion-button (click)="showHint()">Dica!</ion-button>
     </ion-col>
