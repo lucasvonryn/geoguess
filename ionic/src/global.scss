@@ -48,6 +48,7 @@
   text-shadow: 2px 2px 0px #000;
   border-radius: 15px;
   transition: all 0.3s ease-in-out;
+  --ripple-color: transparent;
 }
 
 .play-button:hover {
@@ -149,6 +150,7 @@ ion-toolbar {
   border-radius: 15px;
   margin: 10px;
   transition: all 0.3s ease-in-out;
+  --ripple-color: transparent;
 }
 
 .back-button:hover,
@@ -168,10 +170,12 @@ ion-toolbar {
 
 .option-button.correct {
   background-color: #008000;
+  --ripple-color: transparent;
 }
 
 .option-button.wrong {
   background-color: #cc0000;
+  --ripple-color: transparent;
 }
 
 .option-button {
@@ -184,6 +188,7 @@ ion-toolbar {
   border-radius: 15px;
   width: 70%;
   transition: all 0.2s ease-in-out;
+  --ripple-color: transparent;
 }
 
 .option-button:hover {
