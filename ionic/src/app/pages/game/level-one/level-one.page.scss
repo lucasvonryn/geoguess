@@ -18,3 +18,20 @@
   left: 10px; /* Ajuste para evitar sobreposição com o botão Home */
   z-index: 10;
 }
+
+/* Na coluna que contém a seta e o botão de dica, a seta fica à esquerda */
+.next-arrow-col {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+/* Estilo opcional para exibir o número da pergunta */
+.question-number {
+  display: block;
+  font-size: 16px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}

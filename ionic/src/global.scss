@@ -5,7 +5,8 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-  --background: url("./assets/images/mapa-retro.png") no-repeat center center/cover;
+  --background: url("./assets/images/mapa-retro.png") no-repeat center
+    center/cover;
   text-align: center;
   position: relative;
 }
@@ -39,6 +40,7 @@
 }
 
 .play-button {
+  --ripple-color: transparent;
   font-family: "Press Start 2P", cursive;
   font-size: 22px;
   padding: 20px 40px;
@@ -84,4 +86,103 @@
 
 .text-center {
   text-align: center;
+}
+
+.identification-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  position: relative;
+}
+
+ion-toolbar {
+  --background: #1e1e1e;
+}
+
+.identification-title {
+  font-family: "Press Start 2P", cursive;
+  font-size: 32px;
+  color: #fff;
+  text-shadow: 3px 3px 0px #000;
+  margin: 30px 0;
+}
+
+.question-title {
+  font-family: "Press Start 2P", cursive;
+  font-size: 16px;
+  color: #fff;
+  text-shadow: 3px 3px 0px #000;
+  margin: 30px 0;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+}
+
+.input-container ion-item {
+  background: #002244;
+  border: 3px solid #00ccff;
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.input-container ion-input {
+  font-family: "Press Start 2P", cursive;
+  font-size: 20px;
+  color: #000;
+}
+
+.back-button,
+.start-button {
+  --ripple-color: transparent;
+  font-family: "Press Start 2P", cursive;
+  font-size: 22px;
+  padding: 15px 30px;
+  border: 4px solid #00ccff;
+  color: #fff;
+  background-color: #003366;
+  text-shadow: 2px 2px 0px #000;
+  border-radius: 15px;
+  margin: 10px;
+  transition: all 0.3s ease-in-out;
+}
+
+.back-button:hover,
+.start-button:hover {
+  background-color: #004488;
+  transform: scale(1.1);
+}
+
+.option-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: 15px;
+}
+
+.option-button {
+  --ripple-color: transparent;
+  font-family: "Press Start 2P", cursive;
+  font-size: 16px;
+  padding: 10px 20px;
+  color: #fff;
+  background-color: #003366;
+  text-shadow: 2px 2px 0px #000;
+  border-radius: 15px;
+  width: 70%;
+  transition: all 0.2s ease-in-out;
+}
+
+.option-button:hover {
+  background-color: #005599;
+  transform: scale(1.1);
 }

@@ -1,23 +1,18 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title class="text-center">VÍDEO SOBRE AS QUESTÕES</ion-title>
+    <ion-title class="identification-title text-center">VÍDEO SOBRE AS QUESTÕES</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="ion-padding">
-
-  <!-- Botão Home no canto superior direito -->
-  <div class="home-button">
-    <ion-button (click)="goHome()">
-      <ion-icon name="home"></ion-icon>
-    </ion-button>
-  </div>
-
+<ion-content class="background identification-container ion-padding">
   <ion-row class="ion-justify-content-center ion-align-items-center full-height">
     
     <!-- Botão Voltar -->
     <ion-col size="3" class="align-center">
-      <ion-button (click)="goBack()">
+      <ion-button (click)="goHome()" class="back-button" fill="clear">
+        <ion-icon name="home"></ion-icon>
+      </ion-button>
+      <ion-button (click)="goBack()" class="back-button" fill="clear">
         <ion-icon name="arrow-back"></ion-icon>
       </ion-button>
     </ion-col>
@@ -35,8 +30,7 @@
 
       <!-- Botão de reiniciar vídeo -->
       <ion-row class="ion-justify-content-center">
-        <ion-button (click)="reloadVideo(videoPlayer)">
-          <ion-icon name="refresh"></ion-icon>
+        <ion-button (click)="reloadVideo(videoPlayer)" fill="clear" class="start-button">
           REINICIAR
         </ion-button>
       </ion-row>
@@ -44,10 +38,11 @@
 
     <!-- Botão para avançar -->
     <ion-col size="3" class="align-center">
-      <ion-button (click)="goLevelOne()">
+      <ion-button (click)="goLevelOne()" fill="clear" class="start-button">
         <ion-icon name="arrow-forward"></ion-icon>
       </ion-button>
     </ion-col>
+    
 
   </ion-row>
 </ion-content>

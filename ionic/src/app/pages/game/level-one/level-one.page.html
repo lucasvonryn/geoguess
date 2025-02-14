@@ -1,52 +1,57 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title class="text-center">FASE 1</ion-title>
+    <ion-title class="identification-title text-center">FASE 1</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="ion-padding">
+<ion-content class="background identification-container ion-padding">
+  <div class="game-container">
+    <ion-row class="ion-justify-content-center ion-align-items-center full-height">
+      <ion-col size="3" class="align-center">
+        <ion-button (click)="playAudio()" class="back-button" fill="clear">
+          <ion-icon name="play"></ion-icon>
+        </ion-button>
 
-  <div class="video-button">
-    <ion-button (click)="playAudio()">
-      <ion-icon name="play"></ion-icon>
-    </ion-button>
-  </div>
+        <ion-button (click)="goHome()" class="back-button" fill="clear">
+          <ion-icon name="home"></ion-icon>
+        </ion-button>
+        
+        <ion-button (click)="goBack()" class="back-button" fill="clear">
+          <ion-icon name="arrow-back"></ion-icon>
+        </ion-button>
+      </ion-col>
 
-  <div class="home-button">
-    <ion-button (click)="goHome()">
-      <ion-icon name="home"></ion-icon>
-    </ion-button>
-  </div>
-
-  <ion-row class="ion-justify-content-center ion-align-items-center full-height">
-    
-    <ion-col size="3" class="align-center">
-      <ion-button (click)="goBack()">
-        <ion-icon name="arrow-back"></ion-icon>
-      </ion-button>
-    </ion-col>
-
-    <ion-col size="6" class="ion-text-center">
-      <ion-row class="ion-justify-content-center">
-        <h2>{{ questions[currentQuestion].question }}</h2>
-      </ion-row>
-
-      <ion-row class="ion-justify-content-center">
-        <div class="options">
-          <ion-button *ngFor="let option of questions[currentQuestion].options" 
-                      class="option"
-                      [ngClass]="getOptionClass(option)"
-                      (click)="answer(option)"
-                      [disabled]="questions[currentQuestion].answered">
+      <ion-col size="6" class="ion-text-center question-container">
+        <!-- Exibe a pergunta atual -->
+        <ion-label class="question-number question-title">Pergunta {{ currentQuestion + 1 }} de {{ questions.length }}</ion-label>
+        <h2 class="question-title" style="font-size: 28px; line-height: 40px;">{{ currentQuestionObj?.question }}</h2>
+        
+        <div class="option-container">
+          <ion-button 
+            *ngFor="let option of currentQuestionObj?.options; let i = index"
+            [color]="getButtonColor(i)"
+            [disabled]="isButtonDisabled(i)"
+            (click)="answer(i)"
+            fill="clear"
+            class="option-button"
+          >
             {{ option.letter }} - {{ option.text }}
           </ion-button>
         </div>
-      </ion-row>
-    </ion-col>
+      </ion-col>
 
-    <ion-col size="3" class="align-center">
-      <ion-button (click)="showHint()">Dica!</ion-button>
-    </ion-col>
+      <!-- Na coluna à direita, a seta para avançar fica à esquerda do botão de dica -->
+      <ion-col size="3" class="align-center next-arrow-col">
+        <!-- Seta para avançar para a próxima questão (aparece quando a resposta está correta) -->
+        <ion-button *ngIf="canGoNext" (click)="goNext()" class="back-button" fill="clear">
+          <ion-icon name="arrow-forward"></ion-icon>
+        </ion-button>
 
-  </ion-row>
+        <!-- Botão de Dica -->
+        <ion-button (click)="showHint()" class="back-button" fill="clear">
+          Dica!
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </div>
 </ion-content>
