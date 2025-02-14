@@ -1,4 +1,4 @@
-import { IonicModule } from '@ionic/angular'; 
+import { IonicModule, NavController } from '@ionic/angular'; 
 import { CommonModule } from '@angular/common';
 import { Router, RouterModule } from '@angular/router';
 import { Component } from '@angular/core';
@@ -11,18 +11,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./home.page.scss'],
 })
 export class HomePage {
-  constructor(private router: Router) {}
+  constructor(private navCtrl: NavController) {}
 
   startGame() {
-    this.router.navigate(['game-login']);
+    this.navCtrl.navigateBack('/game-login');
   }
   
   showCredits() {
-    this.router.navigate(['credits'])
+    this.navCtrl.navigateBack('/credits');
   }
 
   showAbout() {
-    this.router.navigate(['about']);
+    this.navCtrl.navigateBack('/about');
   }
 
   resetProgress() {
@@ -31,11 +31,11 @@ export class HomePage {
   }
 
   showReport() {
-    this.router.navigate(['report-login']);
+    this.navCtrl.navigateBack('/report-login');
   }
 
   showLevelTwo() {
-    this.router.navigate(['level-two']);
+    this.navCtrl.navigateBack('/level-two');
   }
   
 }

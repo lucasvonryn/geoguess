@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common'; 
-import { IonicModule } from '@ionic/angular';
-import { Router } from '@angular/router';
+import { IonicModule, NavController } from '@ionic/angular';
 
 interface Question {
   image: string;
@@ -18,7 +17,7 @@ interface Question {
 })
 export class LevelTwoPage implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private navCtrl: NavController) { }
 
   questions: Question[] = [
     {
@@ -86,6 +85,6 @@ export class LevelTwoPage implements OnInit {
   }
 
   goHome() {
-    this.router.navigate(['home']);
+    this.navCtrl.navigateBack('/home');
   }
 }
