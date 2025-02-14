@@ -1,65 +1,87 @@
-/*
- * App Global CSS
- * ----------------------------------------------------------------------------
- * Put style rules here that you want to apply globally. These styles are for
- * the entire app and not just one component. Additionally, this file can be
- * used as an entry point to import other CSS/Sass files to be included in the
- * output CSS.
- * For more information on global stylesheets, visit the documentation:
- * https://ionicframework.com/docs/layout/global-stylesheets
- */
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
 
-/* Core CSS required for Ionic components to work properly */
-@import "@ionic/angular/css/core.css";
+.background {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  --background: url("./assets/images/mapa-retro.png") no-repeat center center/cover;
+  text-align: center;
+  position: relative;
+}
 
-/* Basic CSS for apps built with Ionic */
-@import "@ionic/angular/css/normalize.css";
-@import "@ionic/angular/css/structure.css";
-@import "@ionic/angular/css/typography.css";
-@import "@ionic/angular/css/display.css";
+.background::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  --background: rgba(10, 15, 30, 0.8); /* Escurece o fundo para contraste */
+  z-index: 0;
+}
 
-/* Optional CSS utils that can be commented out */
-@import "@ionic/angular/css/padding.css";
-@import "@ionic/angular/css/float-elements.css";
-@import "@ionic/angular/css/text-alignment.css";
-@import "@ionic/angular/css/text-transformation.css";
-@import "@ionic/angular/css/flex-utils.css";
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
 
-/**
- * Ionic Dark Mode
- * -----------------------------------------------------
- * For more info, please see:
- * https://ionicframework.com/docs/theming/dark-mode
- */
+.title {
+  font-family: "Press Start 2P", cursive;
+  color: #32d6ff; /* Azul neon */
+  text-shadow: 4px 4px 0px #000;
+  font-size: 52px;
+  margin: 60px 0;
+}
 
-/* @import "@ionic/angular/css/palettes/dark.always.css"; */
-/* @import "@ionic/angular/css/palettes/dark.class.css"; */
-@import "@ionic/angular/css/palettes/dark.system.css";
+.play-button {
+  font-family: "Press Start 2P", cursive;
+  font-size: 22px;
+  padding: 20px 40px;
+  border: 4px solid #00ccff;
+  color: #fff;
+  background-color: #002244;
+  text-shadow: 2px 2px 0px #000;
+  border-radius: 15px;
+  transition: all 0.3s ease-in-out;
+}
+
+.play-button:hover {
+  background-color: #004488;
+  transform: scale(1.1);
+}
+
+.menu {
+  list-style: none;
+  padding: 0;
+  margin-top: 30px;
+  text-align: center;
+}
+
+.menu li {
+  font-family: "Press Start 2P", cursive;
+  font-size: 20px;
+  color: #fff;
+  text-shadow: 2px 2px 0px #000;
+  padding: 20px;
+  margin: 15px 0;
+  background-color: #002244;
+  border: 4px solid #00ccff;
+  border-radius: 15px;
+  width: 90%;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.menu li:hover {
+  background-color: #004488;
+  transform: scale(1.1);
+}
 
 .text-center {
-    text-align: center;
-}
-
-.align-center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.full-height {
-    height: 80vh; /* Garante que ocupe toda a tela */
-}
-
-.center-input {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    max-width: 300px; /* Ajuste conforme necessário */
-}
-
-.home-button {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    z-index: 10;
+  text-align: center;
 }
