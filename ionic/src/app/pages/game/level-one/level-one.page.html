@@ -1,40 +1,36 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title class="text-center">FASE 1</ion-title>
+    <ion-title class="identification-title text-center">FASE 1</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="ion-padding">
+<ion-content class="background identification-container ion-padding">
 
-  <div class="video-button">
-    <ion-button (click)="playAudio()">
-      <ion-icon name="play"></ion-icon>
-    </ion-button>
-  </div>
+  <ion-button (click)="playAudio()" class="back-button" fill="clear">
+    <ion-icon name="play"></ion-icon>
+  </ion-button>
 
-  <div class="home-button">
-    <ion-button (click)="goHome()">
-      <ion-icon name="home"></ion-icon>
-    </ion-button>
-  </div>
+  <ion-button (click)="goHome()" class="back-button" fill="clear">
+    <ion-icon name="home"></ion-icon>
+  </ion-button>
 
   <ion-row class="ion-justify-content-center ion-align-items-center full-height">
     
     <ion-col size="3" class="align-center">
-      <ion-button (click)="goBack()">
+      <ion-button (click)="goBack()" class="back-button" fill="clear">
         <ion-icon name="arrow-back"></ion-icon>
       </ion-button>
     </ion-col>
 
-    <ion-col size="6" class="ion-text-center">
+    <ion-col size="6" class="ion-text-center question-title">
       <ion-row class="ion-justify-content-center">
         <h2>{{ questions[currentQuestion].question }}</h2>
       </ion-row>
 
       <ion-row class="ion-justify-content-center">
-        <div class="options">
+        <div class="option-container">
           <ion-button *ngFor="let option of questions[currentQuestion].options" 
-                      class="option"
+                      class="option-button"
                       [ngClass]="getOptionClass(option)"
                       (click)="answer(option)"
                       [disabled]="questions[currentQuestion].answered">
@@ -45,7 +41,7 @@
     </ion-col>
 
     <ion-col size="3" class="align-center">
-      <ion-button (click)="showHint()">Dica!</ion-button>
+      <ion-button (click)="showHint()" class="back-button" fill="clear">Dica!</ion-button>
     </ion-col>
 
   </ion-row>
