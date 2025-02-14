@@ -132,14 +132,15 @@ export class LevelOnePage {
 
   goNext() {
     if (this.currentQuestion < this.questions.length - 1) {
+      // Avança para a próxima pergunta
       this.currentQuestion++;
       this.currentQuestionObj = this.questions[this.currentQuestion];
-      this.clickedButtons = [];
-      this.allDisabled = false;
-      this.canGoNext = false;
+      this.clickedButtons = []; // Reseta os botões clicados
+      this.allDisabled = false; // Habilita os botões novamente
+      this.canGoNext = false; // Desabilita o botão de avançar até a próxima resposta
     } else {
-      // Ao final das 5 questões, navega para a fase 2 "level-two"
-      this.navCtrl.navigateForward('/level-two');
+      // Todas as questões foram respondidas, navega para a fase 2
+      this.navCtrl.navigateBack('/level-two');
     }
   }
 
