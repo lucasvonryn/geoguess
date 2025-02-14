@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { IonicModule, NavController, AlertController } from '@ionic/angular';
+import { IonicModule, NavController, ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-level-one',
@@ -10,7 +10,6 @@ import { IonicModule, NavController, AlertController } from '@ionic/angular';
   imports: [CommonModule, IonicModule]
 })
 export class LevelOnePage {
-  // List of questions and answers
   questions = [
     {
       question: "Qual o nome do rio a oeste do Estado?",
@@ -19,9 +18,7 @@ export class LevelOnePage {
         { letter: 'B', text: 'Rio Negro' },
         { letter: 'C', text: 'Rio Paraguai' },
         { letter: 'D', text: 'RIO PARANÁ', correct: true }
-      ],
-      answered: false,
-      isCorrect: false
+      ]
     },
     {
       question: "Qual o significado do Rio Paraná em Tupi?",
@@ -30,9 +27,7 @@ export class LevelOnePage {
         { letter: 'B', text: 'Rápido como o vento' },
         { letter: 'C', text: 'GRANDE, PARECIDO COM O MAR', correct: true },
         { letter: 'D', text: 'Branco como a neve' }
-      ],
-      answered: false,
-      isCorrect: false
+      ]
     },
     {
       question: "Qual árvore está no brasão do Estado?",
@@ -41,9 +36,7 @@ export class LevelOnePage {
         { letter: 'B', text: 'Pau-Brasil' },
         { letter: 'C', text: 'Jacarandá' },
         { letter: 'D', text: 'Ipê-Amarelo' }
-      ],
-      answered: false,
-      isCorrect: false
+      ]
     },
     {
       question: "Qual ave dispersa as sementes da Araucária, e também é símbolo do Estado?",
@@ -52,9 +45,7 @@ export class LevelOnePage {
         { letter: 'B', text: 'Canário' },
         { letter: 'C', text: 'Coruja' },
         { letter: 'D', text: 'GRALHA-AZUL', correct: true }
-      ],
-      answered: false,
-      isCorrect: false
+      ]
     },
     {
       question: "Onde fica a Catedral mais alta da América Latina?",
@@ -63,24 +54,73 @@ export class LevelOnePage {
         { letter: 'B', text: 'Ponta-Grossa' },
         { letter: 'C', text: 'Campo-Largo' },
         { letter: 'D', text: 'MARINGÁ', correct: true }
-      ],
-      answered: false,
-      isCorrect: false
+      ]
     }
   ];
 
   currentQuestion = 0;
+  currentQuestionObj = this.questions[this.currentQuestion];
+  
+  clickedButtons: { index: number, status: 'correct' | 'incorrect' }[] = [];
 
-  constructor(private navCtrl: NavController, private alertCtrl: AlertController) {}
+  // Variáveis para desabilitar botões e exibir a seta para avançar
+  allDisabled = false;
+  canGoNext = false;
 
-  goHome() {
-    this.navCtrl.navigateBack('/home');
+  constructor(
+    private navCtrl: NavController,
+    private toastController: ToastController
+  ) {}
+
+  async answer(selectedIndex: number) {
+    const option = this.currentQuestionObj.options[selectedIndex];
+
+    if (option.correct) {
+      this.clickedButtons.push({ index: selectedIndex, status: 'correct' });
+      this.allDisabled = true;
+      this.canGoNext = true;
+
+      // Usando ion-toast para mensagem de resposta correta
+      await this.presentToast("Resposta Correta! 🎉", 'success');
+    } else {
+      this.clickedButtons.push({ index: selectedIndex, status: 'incorrect' });
+      await this.presentToast("Resposta Errada! ❌", 'danger');
+    }
   }
 
-  goBack() {
-    this.navCtrl.navigateBack('/video');
+  async presentToast(message: string, color: string) {
+    const toast = await this.toastController.create({
+      message,
+      duration: 2000,
+      position: 'top',
+      color
+    });
+    toast.present();
   }
 
+  goNext() {
+    if (this.currentQuestion < this.questions.length - 1) {
+      this.currentQuestion++;
+      this.currentQuestionObj = this.questions[this.currentQuestion];
+      this.clickedButtons = [];
+      this.allDisabled = false;
+      this.canGoNext = false;
+    } else {
+      // Ao final das 5 questões, navega para a fase 2 "level-two"
+      this.navCtrl.navigateForward('/level-two');
+    }
+  }
+
+  getButtonColor(index: number): string {
+    const button = this.clickedButtons.find(b => b.index === index);
+    return button ? (button.status === 'correct' ? 'success' : 'danger') : 'primary';
+  }
+
+  isButtonDisabled(index: number): boolean {
+    return this.allDisabled || this.clickedButtons.some(b => b.index === index);
+  }
+
+  // Métodos auxiliares (implementações completas)
   playAudio() {
     let audio = new Audio('assets/audio/pergunta.mp3');
     audio.play();
@@ -89,45 +129,12 @@ export class LevelOnePage {
   showHint() {
     alert('Dica: Observe as palavras-chave da pergunta!');
   }
-
-  async answer(option: any) {
-    // Mark as answered
-    if (!this.questions[this.currentQuestion].answered) {
-      this.questions[this.currentQuestion].answered = true;
-      this.questions[this.currentQuestion].isCorrect = option.correct;
-
-      if (option.correct) {
-        await this.showAlert("Resposta Correta! 🎉");
-      } else {
-        await this.showAlert("Resposta Errada! ❌");
-      }
-    }
+  
+  goHome() {
+    this.navCtrl.navigateBack('/home');
   }
 
-  async showAlert(message: string) {
-    const alert = await this.alertCtrl.create({
-      header: 'Resultado',
-      message: message,
-      buttons: ['OK']
-    });
-
-    await alert.present();
-  }
-
-  nextQuestion() {
-    if (this.currentQuestion < this.questions.length - 1) {
-      this.currentQuestion++;
-    } else {
-      this.goHome();
-    }
-  }
-
-  // Return class for red color if wrong answer
-  getOptionClass(option: any) {
-    const currentQuestion = this.questions[this.currentQuestion];
-    if (currentQuestion.answered) {
-      return option.correct ? 'correct' : 'incorrect';
-    }
-    return '';
+  goBack() {
+    this.navCtrl.navigateBack('/video');
   }
 }
