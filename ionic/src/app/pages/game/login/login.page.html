@@ -1,31 +1,31 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title class="text-center">IDENTIFICAÇÃO</ion-title>
+    <ion-title class="identification-title text-center">IDENTIFICAÇÃO</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="ion-padding">
+<ion-content class="background identification-container ion-padding">
   <ion-row class="ion-justify-content-center ion-align-items-center full-height">
     
     <ion-col size="3" class="align-center">
-      <ion-button (click)="goHome()">
+      <ion-button class="back-button" fill="clear" (click)="goHome()">
         <ion-icon name="arrow-back-outline"></ion-icon>
       </ion-button>
     </ion-col>
 
     <ion-col size="6" class="ion-text-center">
       <ion-row class="ion-justify-content-center">
-        <h2>QUAL O SEU NOME?</h2>
+        <h2 class="identification-title">QUAL O SEU NOME?</h2>
       </ion-row>
       <ion-row class="ion-justify-content-center">
-        <ion-item class="center-input">
+        <ion-item class="center-input input-container">
           <ion-input label="NOME" mode="ios" [(ngModel)]="name" label-placement="floating"></ion-input>
         </ion-item>
       </ion-row>
     </ion-col>
 
     <ion-col size="3" class="align-center">
-      <ion-button (click)="showVideo()" [disabled]="!name">
+      <ion-button class="start-button" fill="clear" (click)="showVideo()" [disabled]="!name">
         <ion-icon name="play"></ion-icon>
         INICIAR JOGO
       </ion-button>
