@@ -15,18 +15,30 @@
       <img [src]="currentQuestion.image" alt="Característica Cultural" class="cultural-image">
     </div>
 
-    <div class="options-container">
-      <ion-button 
-        *ngFor="let option of currentQuestion.options; let i = index" 
-        expand="block" 
-        [color]="getButtonColor(i)" 
-        [disabled]="isButtonDisabled(i)"
-        (click)="selectOption(i)"
-        fill="clear"
-        class="option-button"
-      >
-        {{ option }}
-      </ion-button>
+    <!-- Novo contêiner para agrupar opções e quadrados de progresso em coluna -->
+    <div class="question-options-container">
+      <div class="options-container">
+        <ion-button 
+          *ngFor="let option of currentQuestion.options; let i = index" 
+          expand="block" 
+          [color]="getButtonColor(i)" 
+          [disabled]="isButtonDisabled(i)"
+          (click)="selectOption(i)"
+          fill="clear"
+          class="option-button"
+          [ngClass]="{'correct': isOptionCorrect(i), 'wrong': isOptionWrong(i)}"
+        >
+          {{ option }}
+        </ion-button>
+      </div>
+
+      <!-- Quadrados de progresso abaixo das opções -->
+      <div class="progress-container">
+        <div *ngFor="let q of questions; let i = index" 
+             class="progress-square" 
+             [ngClass]="getSquareClass(i)">
+        </div>
+      </div>
     </div>
   </div>
 
