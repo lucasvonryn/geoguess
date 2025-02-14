@@ -123,7 +123,7 @@ export class LevelOnePage {
     const toast = await this.toastController.create({
       message,
       duration: 2000,
-      position: 'top',
+      position: 'bottom',
       color  // 'success' para verde e 'danger' para vermelho
     });
     this.currentToast = toast;
