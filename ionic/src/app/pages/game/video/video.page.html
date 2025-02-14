@@ -7,37 +7,36 @@
 <ion-content class="background identification-container ion-padding">
   <ion-row class="ion-justify-content-center ion-align-items-center full-height">
     
-    <!-- Botão Voltar -->
     <ion-col size="3" class="align-center">
-      <ion-button (click)="goHome()" class="back-button" fill="clear">
-        <ion-icon name="home"></ion-icon>
-      </ion-button>
-      <ion-button (click)="goBack()" class="back-button" fill="clear">
-        <ion-icon name="arrow-back"></ion-icon>
-      </ion-button>
-    </ion-col>
-
-    <!-- Vídeo centralizado -->
-    <ion-col size="6" class="ion-text-center">
-      <ion-row class="ion-justify-content-center">
-        <div class="video-container">
-          <video #videoPlayer controls>
-            <source src="assets/videos/exemplo.mp4" type="video/mp4">
-            SEU NAVEGADOR NÃO SUPORTA VÍDEOS
-          </video>
-        </div>
+      <ion-row>
+        <ion-button (click)="goHome()" class="back-button" fill="clear">
+          <ion-icon name="home"></ion-icon>
+        </ion-button>
       </ion-row>
 
-      <!-- Botão de reiniciar vídeo -->
-      <ion-row class="ion-justify-content-center">
+      <ion-row>
+        <ion-button (click)="goBack()" class="back-button" fill="clear">
+          <ion-icon name="arrow-back"></ion-icon>
+        </ion-button>
+      </ion-row>
+
+      <ion-row>
         <ion-button (click)="reloadVideo(videoPlayer)" fill="clear" class="start-button">
           REINICIAR
         </ion-button>
       </ion-row>
     </ion-col>
 
-    <!-- Botão para avançar -->
-    <ion-col size="3" class="align-center">
+    <ion-col size="6">
+      <ion-row class="ion-justify-content-center">
+        <video #videoPlayer controls style="margin: 10px 0px 0px 100px;">
+          <source src="assets/videos/exemplo.mp4" type="video/mp4">
+          SEU NAVEGADOR NÃO SUPORTA VÍDEOS
+        </video>
+      </ion-row>
+    </ion-col>
+
+    <ion-col size="3">
       <ion-button (click)="goLevelOne()" fill="clear" class="start-button">
         <ion-icon name="arrow-forward"></ion-icon>
       </ion-button>
