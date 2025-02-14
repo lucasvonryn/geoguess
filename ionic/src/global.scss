@@ -172,3 +172,21 @@ ion-toolbar {
 .option-button.wrong {
   background-color: #cc0000;
 }
+
+.option-button {
+  font-family: "Press Start 2P", cursive;
+  font-size: 16px;
+  padding: 10px 20px;
+  color: #fff;
+  background-color: #003366;
+  text-shadow: 2px 2px 0px #000;
+  border-radius: 15px;
+  margin: 10px;
+  width: 70%;
+  transition: all 0.2s ease-in-out;
+}
+
+.option-button:hover {
+  background-color: #005599;
+  transform: scale(1.1);
+}
