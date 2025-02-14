@@ -192,12 +192,12 @@ ion-toolbar {
 }
 
 /* Toast custom classes */
-.toast-success {
-  background-color: #008000 !important;
-  color: #fff !important;
+.custom-toast-success {
+  --background: #008000 !important;
+  --color: #fff !important;
 }
 
-.toast-danger {
-  background-color: #cc0000 !important;
-  color: #fff !important;
+.custom-toast-danger {
+  --background: #cc0000 !important;
+  --color: #fff !important;
 }

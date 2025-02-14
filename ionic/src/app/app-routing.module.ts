@@ -16,10 +16,6 @@ const routes: Routes = [
     loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule)
   },
   {
-    path: 'about',
-    loadChildren: () => import('./pages/about/about.module').then( m => m.AboutPageModule)
-  },
-  {
     path: 'credits',
     loadChildren: () => import('./pages/credits/credits.module').then( m => m.CreditsPageModule)
   },
@@ -46,7 +42,11 @@ const routes: Routes = [
   {
     path: 'level-two',
     loadChildren: () => import('./pages/game/level-two/level-two.module').then( m => m.LevelTwoPageModule)
+  },  {
+    path: 'about',
+    loadChildren: () => import('./pages/about/about.module').then( m => m.AboutPageModule)
   },
+
 ];
 
 @NgModule({

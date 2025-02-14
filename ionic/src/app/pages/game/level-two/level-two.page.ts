@@ -57,7 +57,7 @@ export class LevelTwoPage implements OnInit {
   // Armazena o resultado de cada questão: "unanswered", "correct" ou "wrong"
   questionResults: string[] = new Array(this.questions.length).fill("unanswered");
 
-  // Flag para desabilitar todas as opções quando a resposta correta for selecionada
+  // Flag para desabilitar todas as opções após a resposta correta
   allDisabled: boolean = false;
 
   // Variável para armazenar o toast atual
@@ -70,7 +70,6 @@ export class LevelTwoPage implements OnInit {
       this.currentToast = null;
     }
 
-    // Se a opção correta for clicada, desabilita todas as opções
     if (selectedIndex === this.currentQuestion?.correctAnswer) {
       // Verifica se já houve tentativa incorreta
       const anyWrong = this.clickedButtons.some(b => b.status === 'incorrect');
@@ -107,9 +106,10 @@ export class LevelTwoPage implements OnInit {
       message,
       duration: 2000,
       position: 'top',
-      color, // 'success' para verde, 'danger' para vermelho
-      // Força a aplicação de uma classe customizada para o toast, se necessário
-      cssClass: color === 'success' ? 'toast-success' : (color === 'danger' ? 'toast-danger' : '')
+      translucent: false,
+      animated: true,
+      // Usamos cssClass customizada para forçar as cores sem afetar o overlay
+      cssClass: color === 'success' ? 'custom-toast-success' : (color === 'danger' ? 'custom-toast-danger' : '')
     });
     this.currentToast = toast;
     toast.present();

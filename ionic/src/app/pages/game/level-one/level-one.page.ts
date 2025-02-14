@@ -124,7 +124,9 @@ export class LevelOnePage {
       message,
       duration: 2000,
       position: 'bottom',
-      color  // 'success' para verde e 'danger' para vermelho
+      translucent: false,
+      animated: true,
+      cssClass: color === 'success' ? 'custom-toast-success' : (color === 'danger' ? 'custom-toast-danger' : '')
     });
     this.currentToast = toast;
     toast.present();
