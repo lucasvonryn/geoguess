@@ -1,30 +1,53 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Vídeo</ion-title>
+    <ion-title class="text-center">VÍDEO SOBRE AS QUESTÕES</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content class="ion-padding">
-  <ion-button (click)="goBack()">
-    <ion-icon name="arrow-back"></ion-icon>
-  </ion-button>
 
-  <div>
-    <video #videoPlayer controls autoplay>
-      <source src="assets/videos/exemplo.mp4" type="video/mp4">
-      Seu navegador não suporta vídeos.
-    </video>
+  <!-- Botão Home no canto superior direito -->
+  <div class="home-button">
+    <ion-button (click)="goHome()">
+      <ion-icon name="home"></ion-icon>
+    </ion-button>
   </div>
 
-  <ion-button (click)="reloadVideo(videoPlayer)">
-    <ion-icon name="refresh"></ion-icon>
-  </ion-button>
+  <ion-row class="ion-justify-content-center ion-align-items-center full-height">
+    
+    <!-- Botão Voltar -->
+    <ion-col size="3" class="align-center">
+      <ion-button (click)="goBack()">
+        <ion-icon name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-col>
 
-  <ion-button (click)="goHome()">
-    <ion-icon name="home"></ion-icon>
-  </ion-button>
+    <!-- Vídeo centralizado -->
+    <ion-col size="6" class="ion-text-center">
+      <ion-row class="ion-justify-content-center">
+        <div class="video-container">
+          <video #videoPlayer controls>
+            <source src="assets/videos/exemplo.mp4" type="video/mp4">
+            SEU NAVEGADOR NÃO SUPORTA VÍDEOS
+          </video>
+        </div>
+      </ion-row>
 
-  <ion-button (click)="goLevelOne()">
-    <ion-icon name="arrow-forward"></ion-icon>
-  </ion-button>
+      <!-- Botão de reiniciar vídeo -->
+      <ion-row class="ion-justify-content-center">
+        <ion-button (click)="reloadVideo(videoPlayer)">
+          <ion-icon name="refresh"></ion-icon>
+          REINICIAR
+        </ion-button>
+      </ion-row>
+    </ion-col>
+
+    <!-- Botão para avançar -->
+    <ion-col size="3" class="align-center">
+      <ion-button (click)="goLevelOne()">
+        <ion-icon name="arrow-forward"></ion-icon>
+      </ion-button>
+    </ion-col>
+
+  </ion-row>
 </ion-content>
