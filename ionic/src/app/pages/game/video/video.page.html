@@ -19,20 +19,11 @@
           <ion-icon name="arrow-back"></ion-icon>
         </ion-button>
       </ion-row>
-
-      <ion-row>
-        <ion-button (click)="reloadVideo(videoPlayer)" fill="clear" class="start-button">
-          REINICIAR
-        </ion-button>
-      </ion-row>
     </ion-col>
 
     <ion-col size="6">
       <ion-row class="ion-justify-content-center">
-        <video #videoPlayer controls style="margin: 10px 0px 0px 100px;">
-          <source src="assets/videos/exemplo.mp4" type="video/mp4">
-          SEU NAVEGADOR NÃO SUPORTA VÍDEOS
-        </video>
+        <iframe width="720" height="480" src="https://www.youtube.com/embed/yCkEVh2S0So?si=7KKmKhbRz00QFaeb" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="padding-left: 7rem;padding-top: 5rem;"></iframe>
       </ion-row>
     </ion-col>
 
