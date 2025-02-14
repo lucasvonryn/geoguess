@@ -19,7 +19,7 @@ export class LoginPage implements OnInit {
 
   showVideo() {
     if (this.name.trim()) {
-      this.navCtrl.navigateForward('/video');
+      this.navCtrl.navigateBack('/video');
     }
   }
 

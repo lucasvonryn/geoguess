@@ -8,17 +8,29 @@
   <div class="game-container">
     <ion-row class="ion-justify-content-center ion-align-items-center full-height">
       <ion-col size="3" class="align-center">
-        <ion-button (click)="playAudio()" class="back-button" fill="clear">
-          <ion-icon name="play"></ion-icon>
-        </ion-button>
+        <ion-row>
+          <ion-button (click)="playAudio()" class="back-button" fill="clear">
+            <ion-icon name="play"></ion-icon>
+          </ion-button>
+        </ion-row>
 
-        <ion-button (click)="goHome()" class="back-button" fill="clear">
-          <ion-icon name="home"></ion-icon>
-        </ion-button>
-        
-        <ion-button (click)="goBack()" class="back-button" fill="clear">
-          <ion-icon name="arrow-back"></ion-icon>
-        </ion-button>
+        <ion-row>
+          <ion-button (click)="goHome()" class="back-button" fill="clear">
+            <ion-icon name="home"></ion-icon>
+          </ion-button>
+        </ion-row>
+
+        <ion-row>
+          <ion-button (click)="goBack()" class="back-button" fill="clear">
+            <ion-icon name="arrow-back"></ion-icon>
+          </ion-button>
+        </ion-row>
+
+        <ion-row>
+          <ion-button (click)="showHint()" class="back-button" fill="clear">
+            Dica!
+          </ion-button>
+        </ion-row>
       </ion-col>
 
       <ion-col size="6" class="ion-text-center question-container">
@@ -41,15 +53,10 @@
       </ion-col>
 
       <!-- Na coluna à direita, a seta para avançar fica à esquerda do botão de dica -->
-      <ion-col size="3" class="align-center next-arrow-col">
+      <ion-col size="3" class="next-arrow-col">
         <!-- Seta para avançar para a próxima questão (aparece quando a resposta está correta) -->
         <ion-button *ngIf="canGoNext" (click)="goNext()" class="back-button" fill="clear">
           <ion-icon name="arrow-forward"></ion-icon>
-        </ion-button>
-
-        <!-- Botão de Dica -->
-        <ion-button (click)="showHint()" class="back-button" fill="clear">
-          Dica!
         </ion-button>
       </ion-col>
     </ion-row>
