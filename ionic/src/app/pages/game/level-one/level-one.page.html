@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title class="identification-title text-center">FASE 1</ion-title>
+    <ion-title class="identification-title text-center">JOGO DAS PERGUNTAS</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -11,11 +11,11 @@
         <ion-button (click)="playAudio()" class="back-button" fill="clear">
           <ion-icon name="play"></ion-icon>
         </ion-button>
-
+      
         <ion-button (click)="goHome()" class="back-button" fill="clear">
           <ion-icon name="home"></ion-icon>
         </ion-button>
-        
+      
         <ion-button (click)="goBack()" class="back-button" fill="clear">
           <ion-icon name="arrow-back"></ion-icon>
         </ion-button>
@@ -23,8 +23,12 @@
 
       <ion-col size="6" class="ion-text-center question-container">
         <!-- Exibe a pergunta atual -->
-        <ion-label class="question-number question-title">Pergunta {{ currentQuestion + 1 }} de {{ questions.length }}</ion-label>
-        <h2 class="question-title" style="font-size: 28px; line-height: 40px;">{{ currentQuestionObj?.question }}</h2>
+        <ion-label class="question-number question-title">
+          Pergunta {{ currentQuestion + 1 }} de {{ questions.length }}
+        </ion-label>
+        <h2 class="question-title" style="font-size: 28px; line-height: 40px;">
+          {{ currentQuestionObj?.question }}
+        </h2>
         
         <div class="option-container">
           <ion-button 
@@ -34,9 +38,19 @@
             (click)="answer(i)"
             fill="clear"
             class="option-button"
+            [ngClass]="{'correct': isOptionCorrect(i), 'wrong': isOptionWrong(i)}"
           >
             {{ option.letter }} - {{ option.text }}
           </ion-button>
+        </div>
+
+        <!-- Quadrados de progresso -->
+        <div class="progress-container">
+          <div 
+            *ngFor="let question of questions; let i = index" 
+            class="progress-square" 
+            [ngClass]="getSquareClass(i)">
+          </div>
         </div>
       </ion-col>
 
