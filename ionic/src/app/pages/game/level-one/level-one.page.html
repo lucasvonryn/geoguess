@@ -5,7 +5,6 @@
 </ion-header>
 
 <ion-content class="ion-padding">
-
   <div class="video-button">
     <ion-button (click)="playAudio()">
       <ion-icon name="play"></ion-icon>
@@ -18,35 +17,44 @@
     </ion-button>
   </div>
 
-  <ion-row class="ion-justify-content-center ion-align-items-center full-height">
-    
-    <ion-col size="3" class="align-center">
-      <ion-button (click)="goBack()">
-        <ion-icon name="arrow-back"></ion-icon>
-      </ion-button>
-    </ion-col>
+  <div class="game-container">
+    <ion-row class="ion-justify-content-center ion-align-items-center full-height">
+      <ion-col size="3" class="align-center">
+        <ion-button (click)="goBack()">
+          <ion-icon name="arrow-back"></ion-icon>
+        </ion-button>
+      </ion-col>
 
-    <ion-col size="6" class="ion-text-center">
-      <ion-row class="ion-justify-content-center">
-        <h2>{{ questions[currentQuestion].question }}</h2>
-      </ion-row>
-
-      <ion-row class="ion-justify-content-center">
+      <ion-col size="6" class="ion-text-center">
+        <!-- Exibe a pergunta atual -->
+        <ion-label class="question-number">Pergunta {{ currentQuestion + 1 }} de {{ questions.length }}</ion-label>
+        <h2>{{ currentQuestionObj?.question }}</h2>
+        
         <div class="options">
-          <ion-button *ngFor="let option of questions[currentQuestion].options" 
-                      class="option"
-                      [ngClass]="getOptionClass(option)"
-                      (click)="answer(option)"
-                      [disabled]="questions[currentQuestion].answered">
+          <ion-button 
+            *ngFor="let option of currentQuestionObj?.options; let i = index"
+            [color]="getButtonColor(i)"
+            [disabled]="isButtonDisabled(i)"
+            (click)="answer(i)"
+            class="option"
+          >
             {{ option.letter }} - {{ option.text }}
           </ion-button>
         </div>
-      </ion-row>
-    </ion-col>
+      </ion-col>
 
-    <ion-col size="3" class="align-center">
-      <ion-button (click)="showHint()">Dica!</ion-button>
-    </ion-col>
+      <!-- Na coluna à direita, a seta para avançar fica à esquerda do botão de dica -->
+      <ion-col size="3" class="align-center next-arrow-col">
+        <!-- Seta para avançar para a próxima questão (aparece quando a resposta está correta) -->
+        <ion-button *ngIf="canGoNext" (click)="goNext()">
+          <ion-icon name="arrow-forward"></ion-icon>
+        </ion-button>
 
-  </ion-row>
+        <!-- Botão de Dica -->
+        <ion-button (click)="showHint()">
+          Dica!
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </div>
 </ion-content>
