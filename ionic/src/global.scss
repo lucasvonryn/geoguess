@@ -5,8 +5,7 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-  --background: url("./assets/images/mapa-retro.png") no-repeat center
-    center/cover;
+  --background: url("./assets/images/mapa-retro.png") no-repeat center center/cover;
   text-align: center;
   position: relative;
 }
@@ -40,7 +39,6 @@
 }
 
 .play-button {
-  --ripple-color: transparent;
   font-family: "Press Start 2P", cursive;
   font-size: 22px;
   padding: 20px 40px;
@@ -141,7 +139,6 @@ ion-toolbar {
 
 .back-button,
 .start-button {
-  --ripple-color: transparent;
   font-family: "Press Start 2P", cursive;
   font-size: 22px;
   padding: 15px 30px;
@@ -169,8 +166,15 @@ ion-toolbar {
   gap: 15px;
 }
 
+.option-button.correct {
+  background-color: #008000;
+}
+
+.option-button.wrong {
+  background-color: #cc0000;
+}
+
 .option-button {
-  --ripple-color: transparent;
   font-family: "Press Start 2P", cursive;
   font-size: 16px;
   padding: 10px 20px;

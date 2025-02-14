@@ -35,3 +35,47 @@
   margin-bottom: 10px;
   font-weight: bold;
 }
+
+/* Estilos customizados para os botões de resposta */
+.option-button.correct {
+  background-color: #008000 !important; /* Verde */
+  color: #fff !important;
+  border-color: #008000 !important;
+}
+
+.option-button.wrong {
+  background-color: #cc0000 !important; /* Vermelho */
+  color: #fff !important;
+  border-color: #cc0000 !important;
+}
+
+/* Quadrados de progresso */
+.progress-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.progress-square {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #fff;
+  background-color: transparent;
+  border-radius: 3px;
+}
+
+/* Classe para a questão atual (destacada em azul) */
+.progress-square.current {
+  background-color: blue;
+}
+
+/* Se a questão foi respondida corretamente na 1ª tentativa */
+.progress-square.correct {
+  background-color: green;
+}
+
+/* Se houve ao menos 1 tentativa incorreta */
+.progress-square.wrong {
+  background-color: red;
+}

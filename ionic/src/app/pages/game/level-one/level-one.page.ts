@@ -61,11 +61,18 @@ export class LevelOnePage {
   currentQuestion = 0;
   currentQuestionObj = this.questions[this.currentQuestion];
   
+  // Armazena os cliques da questão atual
   clickedButtons: { index: number, status: 'correct' | 'incorrect' }[] = [];
+  
+  // Armazena o resultado de cada questão: 'unanswered', 'correct' ou 'wrong'
+  questionResults: string[] = new Array(this.questions.length).fill("unanswered");
 
   // Variáveis para desabilitar botões e exibir a seta para avançar
   allDisabled = false;
   canGoNext = false;
+
+  // Variável para armazenar o toast atual
+  currentToast: any = null;
 
   constructor(
     private navCtrl: NavController,
@@ -75,26 +82,46 @@ export class LevelOnePage {
   async answer(selectedIndex: number) {
     const option = this.currentQuestionObj.options[selectedIndex];
 
+    // Remove o toast anterior, se existir
+    if (this.currentToast) {
+      await this.currentToast.dismiss();
+      this.currentToast = null;
+    }
+
     if (option.correct) {
+      // Verifica se houve alguma tentativa incorreta antes
+      const anyWrong = this.clickedButtons.some(b => b.status === 'incorrect');
       this.clickedButtons.push({ index: selectedIndex, status: 'correct' });
+      
+      // Se houve tentativa errada, marca a questão como 'wrong', senão 'correct'
+      this.questionResults[this.currentQuestion] = anyWrong ? 'wrong' : 'correct';
+      
       this.allDisabled = true;
       this.canGoNext = true;
 
-      // Usando ion-toast para mensagem de resposta correta
+      // Toast para resposta correta (verde)
       await this.presentToast("Resposta Correta! 🎉", 'success');
     } else {
       this.clickedButtons.push({ index: selectedIndex, status: 'incorrect' });
+      this.questionResults[this.currentQuestion] = 'wrong';
+      
+      // Toast para resposta errada (vermelho)
       await this.presentToast("Resposta Errada! ❌", 'danger');
     }
   }
 
   async presentToast(message: string, color: string) {
+    if (this.currentToast) {
+      await this.currentToast.dismiss();
+      this.currentToast = null;
+    }
     const toast = await this.toastController.create({
       message,
       duration: 2000,
       position: 'top',
-      color
+      color  // 'success' para verde e 'danger' para vermelho
     });
+    this.currentToast = toast;
     toast.present();
   }
 
@@ -118,6 +145,32 @@ export class LevelOnePage {
 
   isButtonDisabled(index: number): boolean {
     return this.allDisabled || this.clickedButtons.some(b => b.index === index);
+  }
+
+  isOptionCorrect(index: number): boolean {
+    const button = this.clickedButtons.find(b => b.index === index);
+    return button ? button.status === 'correct' : false;
+  }
+
+  isOptionWrong(index: number): boolean {
+    const button = this.clickedButtons.find(b => b.index === index);
+    return button ? button.status === 'incorrect' : false;
+  }
+
+  // Retorna a classe para o quadrado de progresso de acordo com o estado da questão
+  getSquareClass(index: number): string {
+    if (index === this.currentQuestion) {
+      // Se a questão atual ainda não foi respondida, destaque em azul
+      return "current";
+    } else if (index < this.currentQuestion) {
+      // Questões já respondidas
+      if (this.questionResults[index] === 'correct') {
+        return "correct";
+      } else if (this.questionResults[index] === 'wrong') {
+        return "wrong";
+      }
+    }
+    return "";
   }
 
   // Métodos auxiliares (implementações completas)
