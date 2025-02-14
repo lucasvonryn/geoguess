@@ -190,3 +190,14 @@ ion-toolbar {
   background-color: #005599;
   transform: scale(1.1);
 }
+
+/* Toast custom classes */
+.toast-success {
+  background-color: #008000 !important;
+  color: #fff !important;
+}
+
+.toast-danger {
+  background-color: #cc0000 !important;
+  color: #fff !important;
+}
