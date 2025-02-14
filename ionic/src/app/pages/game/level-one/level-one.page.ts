@@ -81,13 +81,13 @@ export class LevelOnePage {
 
   async answer(selectedIndex: number) {
     const option = this.currentQuestionObj.options[selectedIndex];
-
+  
     // Remove o toast anterior, se existir
     if (this.currentToast) {
       await this.currentToast.dismiss();
       this.currentToast = null;
     }
-
+  
     if (option.correct) {
       // Verifica se houve alguma tentativa incorreta antes
       const anyWrong = this.clickedButtons.some(b => b.status === 'incorrect');
@@ -98,9 +98,14 @@ export class LevelOnePage {
       
       this.allDisabled = true;
       this.canGoNext = true;
-
+  
       // Toast para resposta correta (verde)
       await this.presentToast("Resposta Correta! 🎉", 'success');
+  
+      // Aguarda 1 segundo antes de avançar para a próxima pergunta
+      setTimeout(() => {
+        this.goNext();
+      }, 1000); // 1000ms = 1 segundo
     } else {
       this.clickedButtons.push({ index: selectedIndex, status: 'incorrect' });
       this.questionResults[this.currentQuestion] = 'wrong';

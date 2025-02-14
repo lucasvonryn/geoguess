@@ -65,14 +65,6 @@
           </div>
         </div>
       </ion-col>
-
-      <!-- Na coluna à direita, a seta para avançar fica à esquerda do botão de dica -->
-      <ion-col size="3" class="next-arrow-col">
-        <!-- Seta para avançar para a próxima questão (aparece quando a resposta está correta) -->
-        <ion-button *ngIf="canGoNext" (click)="goNext()" class="back-button" fill="clear">
-          <ion-icon name="arrow-forward"></ion-icon>
-        </ion-button>
-      </ion-col>
     </ion-row>
   </div>
 </ion-content>
