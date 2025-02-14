@@ -1,28 +1,28 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>CRÉDITOS</ion-title>
+    <ion-title class="identification-title text-center">CRÉDITOS</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="ion-padding">
-  <div class = "credits-content">
-    <ion-button (click)="goToHome()">
-      <ion-icon name="arrow-back"></ion-icon>
-    </ion-button>
-  
-    <ion-title class="title">CRÉDITOS</ion-title>
+<ion-content class="background identification-container ion-padding">
+  <!-- Botão para voltar à Home -->
+  <ion-button (click)="goHome()" class="back-button" fill="clear">
+    <ion-icon name="arrow-back"></ion-icon>
+  </ion-button>
 
-    <div class="ion-align-items-center" style="height: 70vh;">
-      <ul class="credits-list">
-        <li class="credits-item">
-          <h2>DESENVOLVIDO POR:</h2>
-          <p>André Luiz Milek Magnani</p>
-          <p>Lucas Gabriel Von Ryn</p>
-          <p>Murilo Vozniak Correia</p>
-          <p>Nathan de Paula</p>
-          <p>Vagner Guimarães</p>
-        </li>
-      </ul>
-    </div>
-  </div>
+  <ion-card class="credits-card">
+    <ion-card-header>
+      <ion-card-title class="identification-title">Créditos</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-card-subtitle>
+        <h2>DESENVOLVIDO POR:</h2>
+      </ion-card-subtitle>
+      <p>André Luiz Milek Magnani</p>
+      <p>Lucas Gabriel Von Ryn</p>
+      <p>Murilo Vozniak Correia</p>
+      <p>Nathan de Paula</p>
+      <p>Vagner Guimarães</p>
+    </ion-card-content>
+  </ion-card>
 </ion-content>

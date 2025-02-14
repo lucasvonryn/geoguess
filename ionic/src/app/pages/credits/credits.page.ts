@@ -1,25 +1,19 @@
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
-import { IonicModule } from '@ionic/angular';
-import { Router, RouterModule } from '@angular/router';
+import { IonicModule, NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-credits',
   templateUrl: './credits.page.html',
-  imports: [IonicModule, CommonModule],
-  standalone: true,
   styleUrls: ['./credits.page.scss'],
+  standalone: true,
+  imports: [CommonModule, IonicModule]
 })
-export class CreditsPage implements OnInit {
-  
+export class CreditsPage {
 
-  constructor(private router: Router) {}
+  constructor(private navCtrl: NavController) { }
 
-  ngOnInit() {
+  goHome() {
+    this.navCtrl.navigateBack('/home');
   }
-
-  goToHome(){
-    this.router.navigate(['home']);
-  }
-
 }
