@@ -47,10 +47,6 @@ const routes: Routes = [
     path: 'level-two',
     loadChildren: () => import('./pages/game/level-two/level-two.module').then( m => m.LevelTwoPageModule)
   },
-  {
-    path: 'final',
-    loadChildren: () => import('./pages/game/final/final.module').then( m => m.FinalPageModule)
-  },
 ];
 
 @NgModule({
