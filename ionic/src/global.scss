@@ -40,6 +40,7 @@
 }
 
 .play-button {
+  --ripple-color: transparent;
   font-family: "Press Start 2P", cursive;
   font-size: 22px;
   padding: 20px 40px;
@@ -140,6 +141,7 @@ ion-toolbar {
 
 .back-button,
 .start-button {
+  --ripple-color: transparent;
   font-family: "Press Start 2P", cursive;
   font-size: 22px;
   padding: 15px 30px;
@@ -165,15 +167,8 @@ ion-toolbar {
   gap: 15px;
 }
 
-.option-button.correct {
-  background-color: #008000;
-}
-
-.option-button.wrong {
-  background-color: #cc0000;
-}
-
 .option-button {
+  --ripple-color: transparent;
   font-family: "Press Start 2P", cursive;
   font-size: 16px;
   padding: 10px 20px;
@@ -181,7 +176,6 @@ ion-toolbar {
   background-color: #003366;
   text-shadow: 2px 2px 0px #000;
   border-radius: 15px;
-  margin: 10px;
   width: 70%;
   transition: all 0.2s ease-in-out;
 }
